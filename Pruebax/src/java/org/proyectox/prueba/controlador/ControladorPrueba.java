@@ -43,6 +43,9 @@ public class ControladorPrueba implements ActionListener {
      cantidad = Double.parseDouble(vista.campoTexto.getText());
      modelo.setCantidad(cantidad);
      modelo.setMoneda(18.78);
+     modelo.setMoneda(18.78);
+     modelo.setMoneda(18.78);
+     modelo.setMoneda(18.78);
      modelo.convetirDolarAPeso();
      vista.lResultado.setText(modelo.getResultado().toString());
     }catch(NumberFormatException e) {
