@@ -10,5 +10,5 @@ package org.proyectox.prueba.controlador;
  * @author mfab
  */
 public class ControladorPrueba {
-    
+    public String variable;
 }
