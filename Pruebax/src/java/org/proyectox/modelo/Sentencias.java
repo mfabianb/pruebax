@@ -11,7 +11,7 @@ package org.proyectox.modelo;
 public class Sentencias {
 
     public static String getIiniciarSesion(String u, String c) {
-        return "select * from Usuario where and email='" + u + "' and password='" + c + "' order by idUsuario asc";
+        return "select usuario.usuariocol, usuario.email from usuario where usuario.email='" + u + "' and usuario.password='" + c + "' order by usuario.idUsuario asc";
     }
     /*
     public static String getUsuario(int id) {
