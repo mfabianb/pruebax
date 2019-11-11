@@ -54,7 +54,7 @@ input[type=text] {
     border: 1px solid #ccc;
     border-radius: 2px;
     font-size: 14px;
-    background-image: url('../Imagenes/buscar.png');
+    background-image: url('../img/buscar.png');
     background-position: 6px 2px; 
     background-size: 25px;
     background-repeat: no-repeat;
