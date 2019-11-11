@@ -42,7 +42,7 @@ public class IniciarSesion extends HttpServlet {
         try (PrintWriter out = response.getWriter()) {
             String usuarioLogin;
             String contrasenaLogin;
-            Usuario usuario;
+            Usuario usuario = null;
             HttpSession sesion = request.getSession(true);
 
             if (sesion.getAttribute("Usuario") != null) {

@@ -5,22 +5,19 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="org.proyectox.entidades.Usuario"%>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
     <%
-        if (session.getAttribute("objerr") != null) {
-        session.invalidate();
-    } else {
-        if (session.getAttribute("objusr") != null) {
-            if (((Usuario) session.getAttribute("objusr")).getTipo() == 1) {
-                response.sendRedirect("/MueveTusManos/administrador/principalAdministrador.jsp");
-            } else if (((Usuario) session.getAttribute("objusr")).getTipo() == 2) {
-                response.sendRedirect("/MueveTusManos/interesado/principalInteresado.jsp");
-            } else if (((Usuario) session.getAttribute("objusr")).getTipo() == 3) {
-                response.sendRedirect("/MueveTusManos/moderador/principalModerador.jsp");
+        try {
+            if (session.getAttribute("Usuario") != null) {
+                //out.println("<h1>OK!</h1>");
+            } else {
+                //out.println("<h1>Falta</h1>");
             }
+        } catch (Exception e) {
+            //out.println("<h1>Falta</h1>");
         }
-    }
     %>
     <head>
         <meta charset="utf-8">
@@ -42,9 +39,9 @@
                 if (modp.test(urlParams)) {
                     error = urlParams.get("e");
                     if (error == '1') {
-                        //$('#mError1').modal('show');
+                        $('#mError1').modal('show');
                     } else if (error == '2') {
-                        //$('#mError2').modal('show');
+                        $('#mError2').modal('show');
                     }
                 }
             }
