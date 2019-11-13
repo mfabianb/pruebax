@@ -1,0 +1,34 @@
+
+html{
+    margin: 0;
+    padding: 0;
+    background: url('../Imagenes/Fondo.png') no-repeat center center fixed;
+    font-family: sans-serif;
+}
+
+button{
+    background-color: #6897c7;
+    color:rgb(87, 87, 87);;
+}
+
+#Login-Box{
+    background: rgba(255, 255, 255, 0.8);;
+    height: 377pt;
+    width: 600pt;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+}
+
+#img1{
+    height: 377pt;
+    width: 49pt;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    opacity: 70%;
+}
