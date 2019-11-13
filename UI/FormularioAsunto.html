@@ -1,15 +1,66 @@
 <!DOCTYPE html>
 <html>
-    <header>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no">
-        <title>Registrar Asunto</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="Css/estilo.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    </header>
-    <body>
-        
-    </body>
+<header>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Registrar Asunto</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="Css/estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</header>
+
+<body>
+
+    <section class="container" id="Cuerpo">
+        <br /><br />
+        <h2><b>Nuevo Asunto</b></h2>
+        <p>
+            Por favor, para crear un asunto nuevo llena el siguiente formulario con atención.
+            Tenga a la mano todos los documentos necesarios para el registro exitoso del asunto.
+            <br>Gracias por su comprensión para cualquier corrección o aclaración comuníquese con
+            el administrador.
+        </p><br /><br />
+
+        <form class="form-horizontal" action="">
+            <h4><b>Datos del asunto</b></h4>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Nombre:</label>
+                <div class="col-sm-4">
+                    <input type="name" class="form-control" id="name" placeholder="Ingresar su nombre">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="responsable">Creado por:</label>
+                <div class="col-sm-4">
+                    <input type="name" class="form-control" id="responsable" placeholder="Ingresar su nombre">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
+                <div class="col-sm-4">
+                    <input type="password" class="form-control" id="pwd" placeholder="Ingresar contraseña">
+                </div>
+            </div><br />
+
+            <div class="form-group">
+                <div id="div_file" class="btn btn-default">
+                    <label class="center" for="btn_enviar">Subir Documentos</label>
+                    <input type="file" id="btn_enviar">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default">Crear</button>
+                </div>
+            </div>
+
+        </form>
+    </section><br /><br /><br /><br />
+
+</body>
+
 </html>
