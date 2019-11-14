@@ -36,13 +36,14 @@ p {
   font-size: 15px;
 }
 
-#div_file {
-  padding: 10px;
-  width: 150px;
-  background-color: #6897c7;
-}
-
-input#btn_enviar {
-  position: absolute;
-  bottom: 0px;
+#btn_enviar {
+  color: transparent;
+  background-color: transparent;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  z-index: 100;
 }
