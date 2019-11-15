@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.proyectox.entidades.Usuario;
+import org.proyectox.modelo.insertar.insertarMensajero;
 import org.proyectox.validar.ValidarFormato;
 
 /**
@@ -51,7 +52,12 @@ public class registrarMensajero extends HttpServlet {
                     identificacion = request.getParameter("IdMensajero");
                     
                     if(ValidarFormato.validarRegistroMensajeros(nombre, procedencia, destino, identificacion)){
+                        if(insertarMensajero.insertarMensajero(nombre, procedencia, identificacion, destino)){
                         response.sendRedirect("/Pruebax/recepcionista/registrarMensajero.jsp?p=2");
+                        }else{
+                            response.sendRedirect("/Pruebax/recepcionista/registrarMensajero.jsp?p=1");
+                        }
+                        
                     }else{
                         response.sendRedirect("/Pruebax/recepcionista/registrarMensajero.jsp?p=1");
                     }
