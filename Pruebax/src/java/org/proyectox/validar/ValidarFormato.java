@@ -49,6 +49,25 @@ public class ValidarFormato {
         return validado;
     }
 
+    public static boolean esAlfaEspacio(String cadena) {
+        boolean validado;
+        try {
+            if (!(cadena.equals(""))) {//sí no está vacío
+                for (int i = 0; i != cadena.length(); i++) {
+                    if (cadena.charAt(i) == (char) 34 || cadena.charAt(i) == (char) 39 || cadena.charAt(i) == (char) 96 || cadena.charAt(i) == (char) 42) {
+                        break;
+                    }
+                }
+                validado = cadena.matches("[a-zA-ZáéíóúÁÉÍÓÚñÑ!#$%\\s]+");
+            } else {
+                validado = false;
+            }
+        } catch (Exception e) {
+            validado = false;
+        }
+        return validado;
+    }
+
     public static boolean esNumerico(String cadena) {
         boolean validado;
         try {
@@ -85,5 +104,25 @@ public class ValidarFormato {
     public static boolean esCorreo(String cadena) {
         return cadena.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
     }
-    
+
+    public static boolean datosValidos(boolean datos[]) {
+        boolean validos = true;
+        for (int i = 0; i < datos.length; i++) {
+            if(!datos[i]){
+                validos = false;
+                break;
+            }
+        }
+        return validos;
+    }
+
+    public static boolean validarRegistroMensajeros(String nombre, String procedencia,
+            String destino, String identificacion) {
+        boolean vdatos[] = new boolean[4];
+        vdatos[0] = esAlfaEspacio(nombre);
+        vdatos[1] = esAlfanumericoEspacio(procedencia);
+        vdatos[2] = esAlfanumericoEspacio(destino);
+        vdatos[3] = esAlfanumericoEspacio(identificacion);
+        return datosValidos(vdatos);
+    }
 }
