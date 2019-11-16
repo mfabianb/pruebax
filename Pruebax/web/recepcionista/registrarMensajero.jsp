@@ -16,7 +16,8 @@
                 if(tipoUsuario.equals("Recepcionista")){
                     response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
                 }else{}
-            } else {}
+            } else {
+            }
         } catch (Exception e) {}
     %>
 
