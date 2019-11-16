@@ -48,6 +48,7 @@ public class IniciarSesion extends HttpServlet {
             if (sesion.getAttribute("Usuario") != null) {
                 response.sendRedirect("/Pruebax/index.jsp");
             } else {
+                
                 usuarioLogin = request.getParameter("usuario");
                 contrasenaLogin = request.getParameter("password");
 

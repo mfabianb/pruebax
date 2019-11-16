@@ -11,16 +11,12 @@
     <%
         try {
             if (session.getAttribute("Usuario") != null) {
-                //out.println("<h1>OK!</h1>");
-                response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
-            } else {
-                //out.println("<h1>Falta</h1>");
-                //response.sendRedirect("/Pruebax/CerrarSesion");
-            }
-        } catch (Exception e) {
-            //out.println("<h1>Falta</h1>");
-            //response.sendRedirect("/Pruebax/CerrarSesion");
-        }
+                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
+                if(tipoUsuario.equals("Recepcionista")){
+                    response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
+                }else{}
+            } else {}
+        } catch (Exception e) {}
     %>
     <head>
         <meta charset="utf-8">

@@ -10,6 +10,7 @@ package org.proyectox.entidades;
  * @author mfab
  */
 public class Usuario {
+    private int idUsuario;
     private String nombre;
     private String email;
     private String password;
@@ -18,6 +19,27 @@ public class Usuario {
     public Usuario(String nombre, String email) {
         this.nombre = nombre;
         this.email = email;
+    }
+    
+    public Usuario(String nombre, String email, String tipoUsuario) {
+        this.nombre = nombre;
+        this.email = email;
+        this.tipoUsuario = tipoUsuario;
+    }
+    
+    public Usuario(int idUsuario, String nombre, String email, String tipoUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.email = email;
+        this.tipoUsuario = tipoUsuario;
+    }
+
+    public Usuario(int idUsuario, String nombre, String email, String password, String tipoUsuario) {
+        this.idUsuario = idUsuario;
+        this.nombre = nombre;
+        this.email = email;
+        this.password = password;
+        this.tipoUsuario = tipoUsuario;
     }
 
     public String getNombre() {
@@ -50,6 +72,14 @@ public class Usuario {
 
     public void setTipoUsuario(String tipoUsuario) {
         this.tipoUsuario = tipoUsuario;
+    }
+
+    public int getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(int idUsuario) {
+        this.idUsuario = idUsuario;
     }
     
 }

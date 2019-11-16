@@ -1,17 +1,15 @@
 package org.proyectox.modelo;
 
-/*
- *      Autor: mfab
- *  Documento: Sentencias
- *  Creado el: Apr 5, 2019, 5:08:01 PM
- *   Proyecto: Mueve tus Manos
+/**
+ *
+ * @author mfab
  */
-
 
 public class Sentencias {
 
-    public static String getIiniciarSesion(String u, String c) {
-        return "select usuario.usuariocol, usuario.email from usuario where usuario.email='" + u + "' and usuario.password='" + c + "' order by usuario.idUsuario asc";
+    public static String getIiniciarSesion(String usuario, String password) {
+        return "SELECT idUsuario, nombre, email, tipo FROM USUARIO "
+                + "WHERE nombre='" + usuario +"' AND password='" + password + "'";
     }
     
     public static String insertarNuevoMensajero(String nombre, String procedencia, 
@@ -19,6 +17,7 @@ public class Sentencias {
         return "insert into mensajero (nombre, procedencia, identificacion, destino, entrada) "
                 + "values ('" + nombre + "','" + procedencia + "','" + identificacion + "','" + destino + "', CURRENT_TIMESTAMP)";
     }
+    
     /*
     public static String getUsuario(int id) {
         return "select idUsuario, Correo, Usuario, Password, Edad, Tipo, idEstado from Usuario where idUsuario='" + id + "'";
