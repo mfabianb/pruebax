@@ -81,7 +81,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-dismissable alert-danger">
-                            <strong>El Nombre de Usuario o la Contraseña</strong> no tienen el formato requerido, favor de verificarlo.
+                            <strong>El Nombre de dasdadUsuario o la Contraseña</strong> no tienen el formato requerido, favor de verificarlo.
                         </div>
                     </div>
                     <div class="modal-footer">
