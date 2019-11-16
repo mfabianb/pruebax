@@ -10,16 +10,17 @@
 <html>
 
     <%
+        String nombre = "";
+        String tipoUsuario = "";
         try {
             if (session.getAttribute("Usuario") != null) {
-                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
-                if(tipoUsuario.equals("Recepcionista")){
-                    response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
-                }else{
-                
+                tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
+                nombre = ((Usuario)session.getAttribute("Usuario")).getNombre();
+                if(!tipoUsuario.equals("Recepcionista")){
+                    response.sendRedirect("/Pruebax/CerraSesion");
                 }
             } else {
-                
+                response.sendRedirect("/Pruebax/CerrarSesion");
             }
         } catch (Exception e) {}
     %>
@@ -122,7 +123,8 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-dismissable alert-success">
-                            <strong>Registro exitoso.</strong> puede pasar el área que va a visitar.
+                            <strong>Registro exitoso.</strong> puede pasar el área que va a visitar.<br><br>
+                            <strong>RECUERDE REGISTRAR SU SALIDA AQUÍ MISMO.</strong>
                         </div>
                     </div>
                     <div class="modal-footer">

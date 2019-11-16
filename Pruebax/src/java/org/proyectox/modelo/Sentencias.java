@@ -9,13 +9,13 @@ public class Sentencias {
 
     public static String getIiniciarSesion(String usuario, String password) {
         return "SELECT idUsuario, nombre, email, tipo FROM USUARIO "
-                + "WHERE nombre='" + usuario +"' AND password='" + password + "'";
+                + "WHERE email='" + usuario +"' AND password='" + password + "'";
     }
     
     public static String insertarNuevoMensajero(String nombre, String procedencia, 
             String identificacion, String destino){
-        return "insert into mensajero (nombre, procedencia, identificacion, destino, entrada) "
-                + "values ('" + nombre + "','" + procedencia + "','" + identificacion + "','" + destino + "', CURRENT_TIMESTAMP)";
+        return "INSERT INTO MENSAJERO (nombre, procedencia, identificacion, destino, entrada, tipoIdentificacion) "
+                + "values ('" + nombre + "','" + procedencia + "','" + identificacion + "','" + destino + "', CURRENT_TIMESTAMP, 'OTRA')";
     }
     
     /*

@@ -11,13 +11,17 @@
     
     <%
         String nombre = "";
+        String tipoUsuario = "";
         try {
             if (session.getAttribute("Usuario") != null) {
-                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
-                if(tipoUsuario.equals("Recepcionista")){
-                    response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
-                }else{}
-            } else {}
+                tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
+                nombre = ((Usuario)session.getAttribute("Usuario")).getNombre();
+                if(!tipoUsuario.equals("Recepcionista")){
+                    response.sendRedirect("/Pruebax/CerraSesion");
+                }
+            } else {
+                response.sendRedirect("/Pruebax/CerrarSesion");
+            }
         } catch (Exception e) {}
     %>
     
