@@ -19,7 +19,7 @@ public class Conexion {
             Class.forName("com.mysql.jdbc.Driver");
             String server = "localhost";
             String port = "3306";
-            String dbname = "pruebax";
+            String dbname = "Asuntos_GUM";
             String user = "root";
             String pass = "123";
             String url = "jdbc:mysql://" + server + ":" + port + "/" + dbname + "";
