@@ -13,16 +13,12 @@
         String nombre = "";
         try {
             if (session.getAttribute("Usuario") != null) {
-                //out.println("<h1>OK!</h1>");
-                nombre = ((Usuario)session.getAttribute("Usuario")).getNombre();
-            } else {
-                //out.println("<h1>Falta</h1>");
-                response.sendRedirect("/Pruebax/CerrarSesion");
-            }
-        } catch (Exception e) {
-            //out.println("<h1>Falta</h1>");
-            response.sendRedirect("/Pruebax/CerrarSesion");
-        }
+                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
+                if(tipoUsuario.equals("Recepcionista")){
+                    response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
+                }else{}
+            } else {}
+        } catch (Exception e) {}
     %>
     
     <head>
@@ -47,11 +43,15 @@
             <div class="col-md-2 d-flex flex-row-reverse" style="margin-top: 20pt">
                 <div class="dropdown" style="display: inline;" id="Registro">
                     <a href="#" class="dropdown-toggle" style="text-decoration: none;" data-toggle="dropdown" ID="registro"
-                       runat="server">| NombreUsuario<span class="caret"></span> | </a>
+                       runat="server">| <%=nombre%> <span class="caret"></span> | </a>
                     <ul class="dropdown-menu">
+<<<<<<< HEAD
                         <li><a href="/Pruebax/CerrarSesion">Cerrar Sesión</a></li>
                         <li><a href="">Contactar supervisor</a></li>
                         <li><a href="">CasoUsoN</a></li>
+=======
+                        <li><a href="/Pruebax/CerrarSesion"><b>Cerrar Sesión</b></a></li>
+>>>>>>> 6aefae5ced3618cd09910a7f2d68bcee4bfa14ce
                     </ul>
                 </div>
             </div>
@@ -61,14 +61,17 @@
     <div class="container" id="Menu">
         <ul class="nav nav-pills pull-right">
             <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
+<<<<<<< HEAD
             <li><a href="#"><b>Visualizar Mensajeros</b></a></li>
             <li><a href="#"><b>Asuntos</b></a></li>
             <li><a href="#"><b>Registro de usuarios</b></a></li>
+=======
+>>>>>>> 6aefae5ced3618cd09910a7f2d68bcee4bfa14ce
         </ul>
     </div>
     <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
     
-    <h1>Bienvenido <%out.print(nombre);%></h1>
+    <h1>Bienvenido <%=nombre%></h1>
     <br><br>
 </body>
 

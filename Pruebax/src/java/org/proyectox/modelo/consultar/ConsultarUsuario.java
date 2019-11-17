@@ -29,8 +29,11 @@ public class ConsultarUsuario {
             rs = st.executeQuery(Sentencias.getIiniciarSesion(usuarioLogin, passwordLogin));
             
             if (rs.next()) {
-                usuario = new Usuario(rs.getString("usuario.usuariocol"), 
-                        rs.getString("usuario.email"));
+                usuario = new Usuario(
+                        rs.getString("nombre"), 
+                        rs.getString("email"),
+                        rs.getString("tipo")
+                );
             }
             rs.close();
             st.close();

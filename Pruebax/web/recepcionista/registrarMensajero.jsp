@@ -4,6 +4,7 @@
     Author     : mfab
 --%>
 
+<%@page import="org.proyectox.entidades.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -11,15 +12,16 @@
     <%
         try {
             if (session.getAttribute("Usuario") != null) {
-                //out.println("<h1>OK!</h1>");
+                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
+                if(tipoUsuario.equals("Recepcionista")){
+                    response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
+                }else{
+                
+                }
             } else {
-                //out.println("<h1>Falta</h1>");
-                response.sendRedirect("/Pruebax/CerrarSesion");
+                
             }
-        } catch (Exception e) {
-            //out.println("<h1>Falta</h1>");
-            response.sendRedirect("/Pruebax/CerrarSesion");
-        }
+        } catch (Exception e) {}
     %>
 
     <header>
@@ -53,7 +55,6 @@
     </header>
 
     <body>
-        <br><br>
         <section class="container" id="Cuerpo">
             <h2><b>Registro de mensajero</b></h2><br>
             <form class="form-horizontal" action="/Pruebax/registrarMensajero" method="post">
