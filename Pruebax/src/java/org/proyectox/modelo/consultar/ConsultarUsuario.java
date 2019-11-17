@@ -30,6 +30,7 @@ public class ConsultarUsuario {
             
             if (rs.next()) {
                 usuario = new Usuario(
+                        rs.getInt("idUsuario"), 
                         rs.getString("nombre"), 
                         rs.getString("email"),
                         rs.getString("tipo")

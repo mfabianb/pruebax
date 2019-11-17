@@ -33,8 +33,8 @@ public class registrarMensajero extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        request.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html;charset=UTF-8");  /// LÍNEAS MUY IMPORTANTES PARA LEER UTF-8
+        request.setCharacterEncoding("UTF-8");               /// LÍNEAS MUY IMPORTANTES PARA LEER UTF-8
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             try {
@@ -52,7 +52,7 @@ public class registrarMensajero extends HttpServlet {
                     destino = request.getParameter("Destino");
                     identificacion = request.getParameter("IdMensajero");
 
-                    if (ValidarFormato.validarRegistroMensajeros(nombre, procedencia, destino, identificacion)) {
+                    if (ValidarFormato.validarRegistroMensajeros(new String[]{nombre, procedencia, destino, identificacion})) {
                         if (insertarMensajero.insertarMensajero(nombre, procedencia, identificacion, destino)) {
                             response.sendRedirect("/Pruebax/recepcionista/registrarMensajero.jsp?p=2");
                         } else {

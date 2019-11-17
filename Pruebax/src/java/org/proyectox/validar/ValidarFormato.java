@@ -108,28 +108,38 @@ public class ValidarFormato {
     public static boolean datosValidos(boolean datos[]) {
         boolean validos = true;
         for (int i = 0; i < datos.length; i++) {
-            if(!datos[i]){
+            if (!datos[i]) {
                 validos = false;
                 break;
             }
         }
         return validos;
     }
-    
-    public static boolean validarLogin(String usuario, String password){
+
+    public static boolean validarLogin(String datos[]) {
         boolean vdatos[] = new boolean[2];
-        vdatos[0] = esCorreo(usuario);
-        vdatos[1] = esAlfanumericoEspacio(password);
+        vdatos[0] = esCorreo(datos[0]);
+        vdatos[1] = esAlfanumericoEspacio(datos[1]);
         return datosValidos(vdatos);
     }
 
-    public static boolean validarRegistroMensajeros(String nombre, String procedencia,
-            String destino, String identificacion) {
+    public static boolean validarRegistroMensajeros(String datos[]) {
         boolean vdatos[] = new boolean[4];
-        vdatos[0] = esAlfaEspacio(nombre);
-        vdatos[1] = esAlfanumericoEspacio(procedencia);
-        vdatos[2] = esAlfanumericoEspacio(destino);
-        vdatos[3] = esAlfanumericoEspacio(identificacion);
+        vdatos[0] = esAlfaEspacio(datos[0]);
+        vdatos[1] = esAlfanumericoEspacio(datos[1]);
+        vdatos[2] = esAlfanumericoEspacio(datos[2]);
+        vdatos[3] = esAlfanumericoEspacio(datos[3]);
+        return datosValidos(vdatos);
+    }
+
+    public static boolean validarCrearNuevoAsunto(String datos[]) {
+        boolean vdatos[] = new boolean[6];
+        vdatos[0] = esAlfaEspacio(datos[0]);
+        vdatos[1] = esAlfaEspacio(datos[1]);
+        vdatos[2] = esAlfaEspacio(datos[2]);
+        vdatos[3] = esAlfaEspacio(datos[3]);
+        vdatos[4] = esAlfaEspacio(datos[4]);
+        vdatos[5] = esAlfaEspacio(datos[5]);
         return datosValidos(vdatos);
     }
 }
