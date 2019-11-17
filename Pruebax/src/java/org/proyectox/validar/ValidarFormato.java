@@ -104,6 +104,10 @@ public class ValidarFormato {
     public static boolean esCorreo(String cadena) {
         return cadena.matches("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$");
     }
+    
+    public static boolean esFecha(String cadena){
+        return cadena.matches("^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$");
+    }
 
     public static boolean datosValidos(boolean datos[]) {
         boolean validos = true;

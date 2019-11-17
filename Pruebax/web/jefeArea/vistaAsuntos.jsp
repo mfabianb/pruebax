@@ -27,7 +27,7 @@
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <title>Asuntos</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="Css/estilo.css">
+        <link rel="stylesheet" type="text/css" href="/Pruebax/css/estilo.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </header>
@@ -64,11 +64,11 @@
         <hr style="height: 2pt; margin-top: 0pt;" />
 
     <section class="container" id="Cuerpo">
-        <br><br>
+        
         <h2><b>ASUNTOS</b></h2>
         <p>
             Descripcion de la tabla de asuntos.
-        </p><br><br>
+        </p>
 
         <div class="container " id="Tabla">
             <form action="">
@@ -86,22 +86,22 @@
                     <tbody>
                         <tr>
                             <td>Nombre</td>
-                            <td><a title="Descripción" href="#"><img src="Imagenes/Doc.png" width="40" /></a></td>
-                            <td><input name="turno" type="image" src="imagenes/Turnar.png" width="40px" title="Asignar empleados">
+                            <td><a title="Descripción" href="#"><img src="/Pruebax/img/Doc.png" width="40" /></a></td>
+                            <td><input name="turno" type="image" src="/Pruebax/img/Turnar.png" width="40px" title="Asignar empleados">
                             </td>
-                            <td><input name="masDoc" type="image" src="imagenes/mas1.png" width="40px" title="Archivar documento" />
+                            <td><input name="masDoc" type="image" src="/Pruebax/img/mas1.png" width="40px" title="Archivar documento" />
                             </td>
-                            <td><input name="suspender" type="image" src="imagenes/Suspender.png" width="40px"
+                            <td><input name="suspender" type="image" src="/Pruebax/img/Suspender.png" width="40px"
                                     title="Suspender asunto" />
                             </td>
-                            <td><input name="cancelar" type="image" src="imagenes/Cancelar.png" width="40px" title="Cancelar asunto" />
+                            <td><input name="cancelar" type="image" src="/Pruebax/img/Cancelar.png" width="40px" title="Cancelar asunto" />
                             </td>
                         </tr>
                     </tbody>
                 </table><br>
             </form>
         </div>
-    </section><br><br><br>
+    </section><br>
     </body>
 
 </html>
