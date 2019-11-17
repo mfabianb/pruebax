@@ -1,29 +1,5 @@
-<%-- 
-    Document   : principalRecepcionista
-    Created on : Nov 15, 2019, 10:45:39 AM
-    Author     : mfab
---%>
-
-<%@page import="org.proyectox.entidades.Usuario"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    
-    <%
-        String nombre = "";
-        try {
-            if (session.getAttribute("Usuario") != null) {
-                //out.println("<h1>OK!</h1>");
-                nombre = ((Usuario)session.getAttribute("Usuario")).getNombre();
-            } else {
-                //out.println("<h1>Falta</h1>");
-                response.sendRedirect("/Pruebax/CerrarSesion");
-            }
-        } catch (Exception e) {
-            //out.println("<h1>Falta</h1>");
-            response.sendRedirect("/Pruebax/CerrarSesion");
-        }
-    %>
     
     <head>
         <meta charset="utf-8">
@@ -36,34 +12,34 @@
     </head>
 
     <body>
-        <hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" /><br><br>
+        <hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" /><br /><br />
         <section class="container-fluid" id="Cabecera">
             <div class="col-md-3">
                 <img class="img-center" src="/Pruebax/img/Logo-GUM.png" style="height: 50pt;">
             </div>
 
-            <div class="col-md-7"></div>
+            <div class="col-md-3"></div>
 
-            <div class="col-md-2 d-flex flex-row-reverse" style="margin-top: 20pt">
+            <div class="col-md-6 d-flex flex-row-reverse" style="margin-top: 20pt">
                 <div class="dropdown" style="display: inline;" id="Registro">
                     <a href="#" class="dropdown-toggle" style="text-decoration: none;" data-toggle="dropdown" ID="registro"
                        runat="server">| NombreUsuario<span class="caret"></span> | </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/Pruebax/CerrarSesion">Cerrar Sesión</a></li>
-                        <li><a href="">Contactar supervisor</a></li>
+                        <li><a href="">CasoUso1</a></li>
+                        <li><a href="">CasoUso2</a></li>
                         <li><a href="">CasoUsoN</a></li>
                     </ul>
                 </div>
             </div>
-        </section><br>
+        </section><br><br><br>
 
     <hr style="height: 2pt; margin-top: 0pt;" />
     <div class="container" id="Menu">
         <ul class="nav nav-pills pull-right">
             <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
-            <li><a href="#"><b>Visualizar Mensajeros</b></a></li>
-            <li><a href="#"><b>Asuntos</b></a></li>
-            <li><a href="#"><b>Registro de usuarios</b></a></li>
+            <li><a href="/Pruebax/CerrarSesion"><b>Cerrar Sesión</b></a></li>
+            <li><a href="#"><b>Men1</b></a></li>
+            <li><a href="#"><b>Men1</b></a></li>
         </ul>
     </div>
     <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
