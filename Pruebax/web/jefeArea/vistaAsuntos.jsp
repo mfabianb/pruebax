@@ -82,20 +82,30 @@
                             <th class="col-md-1 text-center">Documentos</th>
                             <th class="col-md-1 text-center">Suspender</th>
                             <th class="col-md-1 text-center">Cancelar</th>
+                            <th class="col-md-1 text-center" style="background-color: white;"></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td><label name="nomAsunto">Nombre</label></td>
-                            <td><a title="Descripción" href="#"><img src="/Pruebax/img/Doc.png" width="40" /></a></td>
-                            <td><input name="turno" type="image" src="/Pruebax/img/Turnar.png" width="40px" title="Asignar empleados">
+                            <td>
+                                <a title="Descripción" href="#"><img src="/Pruebax/img/Doc.png" width="40" /></a></td>
+                            <td>
+                                <input name="turno" type="image" src="/Pruebax/img/Turnar.png" width="40px" title="Asignar empleados">
                             </td>
-                            <td><input name="masDoc" type="image" src="/Pruebax/img/mas1.png" width="40px" title="Archivar documento" />
+                            <td>
+                                <input name="masDoc" type="image" src="/Pruebax/img/mas1.png" width="40px" title="Archivar documento" />
                             </td>
-                            <td><input name="suspender" type="image" src="/Pruebax/img/Suspender.png" width="40px"
-                                    title="Suspender asunto" />
+                            <td>
+                                <input name="suspender" type="image" src="/Pruebax/img/Suspender.png" width="40px"
+                                title="Suspender asunto" />
                             </td>
-                            <td><input name="cancelar" type="image" src="/Pruebax/img/Cancelar.png" width="40px" title="Cancelar asunto" />
+                            <td>
+                                <input name="cancelar" type="image" src="/Pruebax/img/Cancelar.png" width="40px" title="Cancelar asunto" />
+                            </td>
+                            <td>
+                                <input name="visualizar" type="image" src="imagenes/ojo.png" width="40px"
+                                    title="Abrir" />
                             </td>
                         </tr>
                     </tbody>
