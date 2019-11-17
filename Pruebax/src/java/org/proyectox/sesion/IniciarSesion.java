@@ -52,7 +52,7 @@ public class IniciarSesion extends HttpServlet {
                 usuarioLogin = request.getParameter("usuario");
                 contrasenaLogin = request.getParameter("password");
 
-                if (!ValidarFormato.esAlfanumerico(usuarioLogin) || !ValidarFormato.esAlfanumerico(contrasenaLogin)) {
+                if (!ValidarFormato.validarLogin(usuarioLogin, contrasenaLogin)) {
                     response.sendRedirect("/Pruebax/index.jsp?e=1");
                 } else {
                     usuario = ConsultarUsuario.consultarUnUsuario(usuarioLogin, contrasenaLogin);
@@ -65,7 +65,7 @@ public class IniciarSesion extends HttpServlet {
                 }
             }
         }catch(Exception e){
-            response.sendRedirect("/Pruebax/");
+            response.sendRedirect("/Pruebax/index.jsp?e=2");
         }
     }
 

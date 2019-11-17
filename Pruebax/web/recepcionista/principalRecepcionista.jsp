@@ -8,19 +8,24 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-    
+
     <%
         String nombre = "";
+        String tipoUsuario = "";
         try {
             if (session.getAttribute("Usuario") != null) {
-                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
-                if(tipoUsuario.equals("Recepcionista")){
-                    response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
-                }else{}
-            } else {}
-        } catch (Exception e) {}
+                tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
+                nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
+                if (!tipoUsuario.equals("Recepcionista")) {
+                    response.sendRedirect("/Pruebax/CerrarSesion");
+                }
+            } else {
+                response.sendRedirect("/Pruebax/CerrarSesion");
+            }
+        } catch (Exception e) {
+        }
     %>
-    
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no">
@@ -32,7 +37,7 @@
     </head>
 
     <body>
-        <hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" /><br><br>
+        <hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" />
         <section class="container-fluid" id="Cabecera">
             <div class="col-md-3">
                 <img class="img-center" src="/Pruebax/img/Logo-GUM.png" style="height: 50pt;">

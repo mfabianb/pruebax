@@ -11,12 +11,24 @@
     <%
         try {
             if (session.getAttribute("Usuario") != null) {
-                String tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
-                if(tipoUsuario.equals("Recepcionista")){
+                String tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
+                if (tipoUsuario.equals("Recepcionista")) {
                     response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
-                }else{}
-            } else {}
-        } catch (Exception e) {}
+                } else if (tipoUsuario.equals("JefeA")) {
+                    response.sendRedirect("/Pruebax/jefeArea/principalJefeArea.jsp");
+                } else if (tipoUsuario.equals("JefeD")) {
+                    response.sendRedirect("/Pruebax/jefeDepartamento/principalJefeDepartamento.jsp");
+                } else if (tipoUsuario.equals("Supervisor")) {
+                    response.sendRedirect("/Pruebax/supervisor/principalSupervisor.jsp");
+                } else if (tipoUsuario.equals("Admin")) {
+                    response.sendRedirect("/Pruebax/admin/principalAdmin.jsp");
+                } else if (tipoUsuario.equals("Empleado")) {
+                    response.sendRedirect("/Pruebax/empleado/principalEmpleado.jsp");
+                }
+            } else {
+            }
+        } catch (Exception e) {
+        }
     %>
     <head>
         <meta charset="utf-8">

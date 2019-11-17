@@ -6,6 +6,7 @@
 package org.proyectox;
 
 import org.proyectox.modelo.Sentencias;
+import org.proyectox.validar.ValidarFormato;
 
 /**
  *
@@ -13,6 +14,6 @@ import org.proyectox.modelo.Sentencias;
  */
 public class Main {
     public static void main(String a[]){
-        System.out.println(Sentencias.insertarNuevoMensajero("a", "a", "as", "s"));
+        System.out.println(ValidarFormato.validarRegistroMensajeros("Juan López Doriga", "aqui", "ahi", "123123123"));
     }
 }

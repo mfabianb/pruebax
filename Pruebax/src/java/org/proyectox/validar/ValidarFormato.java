@@ -115,6 +115,13 @@ public class ValidarFormato {
         }
         return validos;
     }
+    
+    public static boolean validarLogin(String usuario, String password){
+        boolean vdatos[] = new boolean[2];
+        vdatos[0] = esCorreo(usuario);
+        vdatos[1] = esAlfanumericoEspacio(password);
+        return datosValidos(vdatos);
+    }
 
     public static boolean validarRegistroMensajeros(String nombre, String procedencia,
             String destino, String identificacion) {
