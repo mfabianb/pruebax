@@ -88,11 +88,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nombre</td>
-                            <td>Procedencia</td>
-                            <td>Destino</td>
-                            <td>Tipo</td>
-                            <td>Id</td>
+                            <td><label name="Nombre">Nombre</label> </td>
+                            <td><label name="Procedencia">Procedencia</label></td>
+                            <td><label name="Destino">Destino</label></td>
+                            <td><label name="TipoIdentificacion">Tipo</label></td>
+                            <td><label name="Identificación">Id</label></td>
                             <td><button type="submit" name="Registrar Salida" class="btn btn-default">Registrar Salida
                             </td>
                         </tr>
