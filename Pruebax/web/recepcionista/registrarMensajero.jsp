@@ -14,15 +14,16 @@
         String tipoUsuario = "";
         try {
             if (session.getAttribute("Usuario") != null) {
-                tipoUsuario = ((Usuario)session.getAttribute("Usuario")).getTipoUsuario();
-                nombre = ((Usuario)session.getAttribute("Usuario")).getNombre();
-                if(!tipoUsuario.equals("Recepcionista")){
-                    response.sendRedirect("/Pruebax/CerraSesion");
+                tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
+                nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
+                if (!tipoUsuario.equals("Recepcionista")) {
+                    response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
                 response.sendRedirect("/Pruebax/CerrarSesion");
             }
-        } catch (Exception e) {}
+        } catch (Exception e) {
+        }
     %>
 
     <header>
@@ -56,6 +57,13 @@
     </header>
 
     <body>
+        <hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" />
+        <section class="container-fluid" id="Cabecera">
+            <div class="col-md-3">
+                <img class="img-center" src="/Pruebax/img/Logo-GUM.png" style="height: 50pt;">
+            </div>
+        </section><br>
+        <hr style="height: 2pt; margin-top: 0pt;" />
         <section class="container" id="Cuerpo">
             <h2><b>Registro de mensajero</b></h2><br>
             <form class="form-horizontal" action="/Pruebax/registrarMensajero" method="post">
@@ -91,7 +99,7 @@
                     <div class="col-sm-10">
                         <button type="submit" name="RegistroMen" class="btn btn-default">Registrar</button>
                     </div>
-                </div><br><br>
+                </div>
             </form>
         </section>
         <div id="mError1" class="modal fade" role="dialog">
@@ -113,7 +121,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="mAceptado1" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -123,7 +131,7 @@
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-dismissable alert-success">
-                            <strong>Registro exitoso.</strong> puede pasar el área que va a visitar.<br><br>
+                            <strong>Registro exitoso.</strong> puede pasar el área que va a visitar.
                             <strong>RECUERDE REGISTRAR SU SALIDA AQUÍ MISMO.</strong>
                         </div>
                     </div>
@@ -133,7 +141,7 @@
                 </div>
             </div>
         </div>
-        
+
     </body>
 
 </html>

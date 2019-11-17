@@ -1,6 +1,6 @@
 <%-- 
-    Document   : principalRecepcionista
-    Created on : Nov 15, 2019, 10:45:39 AM
+    Document   : principalJefe
+    Created on : Nov 16, 2019, 5:47:12 PM
     Author     : mfab
 --%>
 
@@ -16,7 +16,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("Recepcionista")) {
+                if (!tipoUsuario.equals("JefeA")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -61,16 +61,15 @@
         <hr style="height: 2pt; margin-top: 0pt;" />
         <div class="container" id="Menu">
             <ul class="nav nav-pills pull-right">
-                <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
-                <li><a href="#"><b>Visualizar Mensajeros</b></a></li>
-                <li><a href="#"><b>Asuntos</b></a></li>
-                <li><a href="#"><b>Registro de usuarios</b></a></li>
+                <li><a href="/Pruebax/jefeArea/registrarNuevoAsunto.jsp"><b>Registrar Nuevo Asunto</b></a></li>
+                <li><a href="/Pruebax/jefeArea/anexarDocumento.jsp"><b>Anexar Documentos</b></a></li>
             </ul>
         </div>
         <hr style="height: 2pt; margin-top: 0pt;" />
 
-        <h1>Bienvenido <%=nombre%></h1>
+        <h1>Bienvenido <%=nombre%>, usted es <%=tipoUsuario%></h1>
         
     </body>
 
 </html>
+
