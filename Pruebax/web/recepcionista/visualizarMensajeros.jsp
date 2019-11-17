@@ -59,6 +59,13 @@
 </header>
 
 <body>
+	<hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" />
+        <section class="container-fluid" id="Cabecera">
+            <div class="col-md-3">
+                <img class="img-center" src="/Pruebax/img/Logo-GUM.png" style="height: 50pt;">
+            </div>
+        </section><br>
+        <hr style="height: 2pt; margin-top: 0pt;" />
     <section class="container" id="Cuerpo">
         <br><br>
         <h2><b>MENSAJEROS</b></h2>
@@ -81,11 +88,11 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nombre</td>
-                            <td>Procedencia</td>
-                            <td>Destino</td>
-                            <td>Tipo</td>
-                            <td>Id</td>
+                            <td><label name="Nombre">Nombre</label> </td>
+                            <td><label name="Procedencia">Procedencia</label></td>
+                            <td><label name="Destino">Destino</label></td>
+                            <td><label name="TipoIdentificacion">Tipo</label></td>
+                            <td><label name="Identificación">Id</label></td>
                             <td><button type="submit" name="Registrar Salida" class="btn btn-default">Registrar Salida
                             </td>
                         </tr>
