@@ -59,6 +59,13 @@
 </header>
 
 <body>
+	<hr style="height: 33pt;  margin-top: 0; background-color: #618ab3;" />
+        <section class="container-fluid" id="Cabecera">
+            <div class="col-md-3">
+                <img class="img-center" src="/Pruebax/img/Logo-GUM.png" style="height: 50pt;">
+            </div>
+        </section><br>
+        <hr style="height: 2pt; margin-top: 0pt;" />
     <section class="container" id="Cuerpo">
         <br><br>
         <h2><b>MENSAJEROS</b></h2>
