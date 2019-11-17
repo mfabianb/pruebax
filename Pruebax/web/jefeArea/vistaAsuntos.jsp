@@ -65,7 +65,7 @@
 
     <section class="container" id="Cuerpo">
         
-        <h2><b>ASUNTaaOS</b></h2>
+        <h2><b>ASUNTOS</b></h2>
         <p>
             Descripcion de la tabla de asuntos.
         </p>
