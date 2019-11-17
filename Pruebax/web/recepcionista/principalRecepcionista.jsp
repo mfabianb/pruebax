@@ -63,8 +63,9 @@
         </ul>
     </div>
     <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
-    
-    <h1>Bienvenido <%=nombre%></h1>
+    <section class="container" id="Cuerpo">
+        <h1>Bienvenido <%=nombre%></h1>
+    </section>
     <br><br>
 </body>
 
