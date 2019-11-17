@@ -14,6 +14,5 @@ import org.proyectox.validar.ValidarFormato;
  */
 public class Main {
     public static void main(String a[]){
-        //System.out.println(ValidarFormato.validarRegistroMensajeros("Juan López Doriga", "aqui", "ahi", "123123123"));
     }
 }

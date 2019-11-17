@@ -13,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.proyectox.entidades.Usuario;
+import org.proyectox.modelo.insertar.insertarNuevoAsunto;
+import org.proyectox.validar.ValidarFormato;
 
 /**
  *
@@ -40,12 +42,22 @@ public class registrarNuevoAsunto extends HttpServlet {
 
             if (usuario.getTipoUsuario().equals("JefeA")) {
                 String nombre;
-                String fechaInicio;
-                String horaInicio;
-                String idCreador;
+                String fechaTermino;
                 String tipo;
-                String estado;
                 
+                nombre = request.getParameter("nombreAsunto");
+                fechaTermino = request.getParameter("fechaTerminoEstimadaAsunto");
+                tipo = request.getParameter("TipoAsunto");
+                
+                if(ValidarFormato.validarCrearNuevoAsunto(new String[]{nombre, fechaTermino, tipo})){
+                    if(insertarNuevoAsunto.insertarAsunto(nombre, fechaTermino, tipo, usuario.getIdUsuario())){
+                        response.sendRedirect("/Pruebax/jefeArea/registrarNuevoAsunto.jsp?p=1");
+                    }else{
+                        response.sendRedirect("/Pruebax/jefeArea/registrarNuevoAsunto.jsp?p=2");
+                    }
+                }else{
+                    response.sendRedirect("/Pruebax/jefeArea/registrarNuevoAsunto.jsp?p=3");
+                }
                 
             }
         } catch (Exception e) {

@@ -4,20 +4,24 @@ package org.proyectox.modelo;
  *
  * @author mfab
  */
-
 public class Sentencias {
 
     public static String getIiniciarSesion(String usuario, String password) {
         return "SELECT idUsuario, nombre, email, tipo FROM USUARIO "
-                + "WHERE email='" + usuario +"' AND password='" + password + "'";
+                + "WHERE email='" + usuario + "' AND password='" + password + "'";
     }
-    
-    public static String insertarNuevoMensajero(String nombre, String procedencia, 
-            String identificacion, String destino){
+
+    public static String insertarNuevoMensajero(String nombre, String procedencia,
+            String identificacion, String destino) {
         return "INSERT INTO MENSAJERO (nombre, procedencia, identificacion, destino, entrada, tipoIdentificacion) "
                 + "values ('" + nombre + "','" + procedencia + "','" + identificacion + "','" + destino + "', CURRENT_TIMESTAMP, 'OTRA')";
     }
-    
+
+    public static String insertarNuevoAsunto(String nombre, String fechaTermino, String tipo, int idCreador) {
+        return "INSERT INTO ASUNTO (idCreador, nombre, fechaInicio, horaInicio, fechaTermino, tipo, estado) VALUES "
+                + "(" + idCreador + ", '" + nombre + "', CURDATE(), CURTIME(), '" + fechaTermino + "', " + tipo + ", 1)";
+    }
+
     /*
     public static String getUsuario(int id) {
         return "select idUsuario, Correo, Usuario, Password, Edad, Tipo, idEstado from Usuario where idUsuario='" + id + "'";
@@ -457,5 +461,5 @@ public class Sentencias {
         return "insert into Usuario (Correo, Usuario, Password, Edad, Tipo, idEstado) values "
                 + "('" + correo + "', '" + usuario + "', '" + password + "', " + edad + ", 2, 1)";
     }
-    */
+     */
 }

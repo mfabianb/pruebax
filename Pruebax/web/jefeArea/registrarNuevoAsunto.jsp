@@ -105,7 +105,7 @@
                 el administrador.
             </p><br>
 
-            <form class="form-horizontal" action="">
+            <form class="form-horizontal" action="/Pruebax/registrarNuevoAsunto">
                 <h4><b>Datos del asunto</b></h4>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Nombre:</label>

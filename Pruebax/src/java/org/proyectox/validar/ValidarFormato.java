@@ -106,7 +106,7 @@ public class ValidarFormato {
     }
     
     public static boolean esFecha(String cadena){
-        return cadena.matches("^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$");
+        return cadena.matches("^\\d{4}([\\-/.])(0?[1-9]|1[1-2])\\1(3[01]|[12][0-9]|0?[1-9])$");
     }
 
     public static boolean datosValidos(boolean datos[]) {
@@ -137,13 +137,10 @@ public class ValidarFormato {
     }
 
     public static boolean validarCrearNuevoAsunto(String datos[]) {
-        boolean vdatos[] = new boolean[6];
+        boolean vdatos[] = new boolean[3];
         vdatos[0] = esAlfaEspacio(datos[0]);
-        vdatos[1] = esAlfaEspacio(datos[1]);
-        vdatos[2] = esAlfaEspacio(datos[2]);
-        vdatos[3] = esAlfaEspacio(datos[3]);
-        vdatos[4] = esAlfaEspacio(datos[4]);
-        vdatos[5] = esAlfaEspacio(datos[5]);
+        vdatos[1] = esFecha(datos[1]);
+        vdatos[2] = esNumerico(datos[2]);
         return datosValidos(vdatos);
     }
 }
