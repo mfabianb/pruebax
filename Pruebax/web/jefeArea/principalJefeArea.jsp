@@ -62,7 +62,8 @@
         <div class="container" id="Menu">
             <ul class="nav nav-pills pull-right">
                 <li><a href="/Pruebax/jefeArea/registrarNuevoAsunto.jsp"><b>Registrar Nuevo Asunto</b></a></li>
-                <li><a href="/Pruebax/jefeArea/anexarDocumento.jsp"><b>Anexar Documentos</b></a></li>
+                <li><a href="/Pruebax/jefeArea/vistaAsuntos.jsp"><b>Consultar Asuntos</b></a></li>
+                <li><a href="/Pruebax/jefeArea/anexarDocumento.jsp"><b>Anexar Documentos a Asuntos</b></a></li>
             </ul>
         </div>
         <hr style="height: 2pt; margin-top: 0pt;" />
