@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group"> 
                 <label class="control-label col-sm-2" for="procedencia">Procedencia:</label>
                 <div class="col-sm-4">
                     <input name="Procedencia" type="text" class="form-control" id="procedencia">
@@ -46,14 +46,28 @@
             </div><br>
 
             <div class="form-group">
-                <label class="control-label col-sm-2" for="idM">Tipo de Identificación</label>
+                <label class="control-label col-sm-2" for="typeId">Tipo de Identificación</label>
                 <div class="col-sm-4">
-                    <select class="browser-default custom-select">
+                    <select class="browser-default custom-select" name="TipoIdentifiacion" id=typeId>
                      <option selected>No seleccionada</option>
                      <option value="1">INE</option>
                      <option value="2">ORGANIZACIÓN</option>
                      <option value="3">OTRA</option>
                 </select>
+                </div>
+            </div><br>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="idM">Hora de Entrada </label>
+                <div class="col-sm-4">
+                    <input name="entrada" type="datetime-local" id="entrada"class="form-control">
+                </div>
+            </div><br>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="idM">Hora de Salida</label>
+                <div class="col-sm-4">
+                    <input name="salida" type="datetime-local" id="salida"class="form-control">
                 </div>
             </div><br>
 
