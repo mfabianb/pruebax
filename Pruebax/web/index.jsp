@@ -12,11 +12,14 @@
         try {
             if (session.getAttribute("Usuario") != null) {
                 //out.println("<h1>OK!</h1>");
+                response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
             } else {
                 //out.println("<h1>Falta</h1>");
+                //response.sendRedirect("/Pruebax/CerrarSesion");
             }
         } catch (Exception e) {
             //out.println("<h1>Falta</h1>");
+            //response.sendRedirect("/Pruebax/CerrarSesion");
         }
     %>
     <head>

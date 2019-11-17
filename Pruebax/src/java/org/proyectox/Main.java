@@ -13,6 +13,6 @@ import org.proyectox.modelo.Sentencias;
  */
 public class Main {
     public static void main(String a[]){
-        System.out.println(Sentencias.getIiniciarSesion("al", "go"));
+        System.out.println(Sentencias.insertarNuevoMensajero("a", "a", "as", "s"));
     }
 }
