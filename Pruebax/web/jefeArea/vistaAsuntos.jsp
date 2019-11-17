@@ -68,7 +68,7 @@
         
         <h2><b>ASUNTOS</b></h2>
         <p>
-            Descripcion de la tabla de asuntos.
+            Pila de asuntos en los que esta invlolucrado:
         </p>
 
         <div class="container " id="Tabla">
