@@ -68,7 +68,10 @@
     </div>
     <hr style="height: 2pt; margin-top: 0pt;" />
 
-    <h1>Bienvenido <%=nombre%>, usted es <%=tipoUsuario%></h1>
+    <section class="container" id="Cuerpo">
+        <br><br>
+        <h1>Bienvenido <%=nombre%>, usted es <%=tipoUsuario%></h1>
+    </section><br><br><br><br>
 
 </body>
 

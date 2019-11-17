@@ -98,7 +98,7 @@
     <hr style="height: 2pt; margin-top: 0pt;" />
 
     <section class="container" id="Cuerpo">
-
+        <br><br>
         <h2><b>Nuevo Asunto</b></h2>
         <p>
             Por favor, para crear un asunto nuevo llena el siguiente formulario con atención.
@@ -151,7 +151,8 @@
                 </div>
             </div><br>
         </form>
-    </section>
+    </section><br><br><br><br>
+
     <div id="mError2" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">

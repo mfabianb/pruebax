@@ -87,9 +87,10 @@
             <li><a href="#"><b>Registro de usuarios</b></a></li>
         </ul>
     </div>
-    <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
+    <hr style="height: 2pt; margin-top: 0pt;" />
 
     <section class="container" id="Cuerpo">
+        <br><br>
         <h2><b>Registro de mensajero</b></h2><br>
         <form class="form-horizontal" action="/Pruebax/registrarMensajero" method="post">
             <h4><b>Información general</b></h4>
@@ -137,7 +138,8 @@
                 </div>
             </div>
         </form>
-    </section>
+    </section><br><br>
+
     <div id="mError1" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <div class="modal-content">

@@ -89,7 +89,7 @@
             <li><a href="#"><b>Registro de usuarios</b></a></li>
         </ul>
     </div>
-    <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
+    <hr style="height: 2pt; margin-top: 0pt;" />
 
     <section class="container" id="Cuerpo">
         <br><br>
@@ -125,7 +125,7 @@
                 </table><br>
             </form>
         </div>
-    </section><br><br><br>
+    </section><br><br><br><br>
 </body>
 
 </html>

@@ -69,6 +69,7 @@
     <hr style="height: 2pt; margin-top: 0pt;" />
 
     <section class="container" id="Cuerpo">
+        <br><br>
         <h2><b>Documentos asociados</b></h2>
         <p>
             Todo el asunto debe ser auditable, cada actividad que se
@@ -117,7 +118,7 @@
                 </div>
             </div>
         </form>
-    </section>
+    </section><br><br><br><br>
 </body>
 
 </html>

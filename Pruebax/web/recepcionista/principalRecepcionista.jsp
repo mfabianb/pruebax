@@ -67,9 +67,10 @@
             <li><a href="#"><b>Registro de usuarios</b></a></li>
         </ul>
     </div>
-    <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
+    <hr style="height: 2pt; margin-top: 0pt;" />
 
     <section class="container" id="Cuerpo">
+        <br><br>
         <h1>Bienvenido <%=nombre%></h1>
     </section>
     <br><br>
