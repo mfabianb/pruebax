@@ -34,6 +34,34 @@
         <link rel="stylesheet" type="text/css" href="/Pruebax/css/estilo.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            var request;
+            var error;
+            var urlParams = new URLSearchParams(window.location.search);
+            var modp = new RegExp('[e][=][0-9]+');
+            var fechaTerminoMinimo;
+
+            window.addEventListener("load", iniciar, false);
+            window.addEventListener("load", fechaTermino, false);
+
+            function iniciar() {
+                if (modp.test(urlParams)) {
+                    error = urlParams.get("e");
+                    if (error == '1') {
+                        $('#mError1').modal('show');
+                    } else if (error == '2') {
+                        $('#mError2').modal('show');
+                    }
+                }
+            }
+
+            function fechaTermino() {
+                var hoy = new Date();
+                fechaTerminoMinimo = hoy.getFullYear() + '-' + ('0' + (hoy.getMonth() + 1)).slice(-2) + '-' + ('0' + hoy.getDate()).slice(-2);
+                document.getElementById('fechaTerminoEstimada').min = fechaTerminoMinimo;
+                document.getElementById('fechaTerminoEstimada').value = fechaTerminoMinimo;
+            }
+        </script>
     </head>
 
     <body>
@@ -68,7 +96,7 @@
         <hr style="height: 2pt; margin-top: 0pt;" />
 
         <section class="container" id="Cuerpo">
-            
+
             <h2><b>Nuevo Asunto</b></h2>
             <p>
                 Por favor, para crear un asunto nuevo llena el siguiente formulario con atención.
@@ -91,11 +119,21 @@
                     <label for="tipo" class="control-label col-sm-2">Tipo:</label>
                     <div class="col-sm-4">
                         <select class="form-control" id="tipo" name="TipoAsunto">
-                            <option>Interno</option>
-                            <option>Externo</option>
+                            <option value="1">Interno</option>
+                            <option value="2">Externo</option>
                         </select>
                     </div>
-                </div><br>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Fecha de estimación de término: </label>
+                    <div class="col-sm-4">
+                        <input name="fechaTerminoEstimadaAsunto" type="date" min="" max="2022-12-31" class="form-control" id="fechaTerminoEstimada"
+                               placeholder="Ingresar nombre del asunto">
+                    </div>
+                </div>
+
+                <br>
 
                 <h4><b>Descripción del asunto</b></h4>
                 <div class="form-group">

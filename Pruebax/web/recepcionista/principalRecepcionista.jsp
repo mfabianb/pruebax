@@ -58,19 +58,20 @@
             </div>
         </section><br>
 
-        <hr style="height: 2pt; margin-top: 0pt;" />
-        <div class="container" id="Menu">
-            <ul class="nav nav-pills pull-right">
-                <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
-                <li><a href="#"><b>Visualizar Mensajeros</b></a></li>
-                <li><a href="#"><b>Asuntos</b></a></li>
-                <li><a href="#"><b>Registro de usuarios</b></a></li>
-            </ul>
-        </div>
-        <hr style="height: 2pt; margin-top: 0pt;" />
-
+    <hr style="height: 2pt; margin-top: 0pt;" />
+    <div class="container" id="Menu">
+        <ul class="nav nav-pills pull-right">
+            <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
+            <li><a href="#"><b>Visualizar Mensajeros</b></a></li>
+            <li><a href="#"><b>Asuntos</b></a></li>
+            <li><a href="#"><b>Registro de usuarios</b></a></li>
+        </ul>
+    </div>
+    <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
+    <section class="container" id="Cuerpo">
         <h1>Bienvenido <%=nombre%></h1>
-        
-    </body>
+    </section>
+    <br><br>
+</body>
 
 </html>

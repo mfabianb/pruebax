@@ -4,9 +4,17 @@
         <servlet-name>registrarMensajero</servlet-name>
         <servlet-class>org.proyectox.controlador.insertar.registrarMensajero</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>registrarNuevoAsunto</servlet-name>
+        <servlet-class>org.proyectox.controlador.insertar.registrarNuevoAsunto</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrarMensajero</servlet-name>
         <url-pattern>/registrarMensajero</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registrarNuevoAsunto</servlet-name>
+        <url-pattern>/registrarNuevoAsunto</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

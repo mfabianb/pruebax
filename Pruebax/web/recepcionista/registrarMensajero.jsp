@@ -90,6 +90,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="tipo" class="control-label col-sm-2">Tipo de identificación:</label>
+                    <div class="col-sm-4">
+                        <select class="form-control" id="tipoId" name="TipoIdMensajero">
+                            <option>INE</option>
+                            <option>ORGANIZACIÓN</option>
+                            <option>OTRA</option>
+                        </select>
+                    </div>
+                </div><br>
+
+                <div class="form-group">
                     <label class="control-label col-sm-2" for="idM">Identificación</label>
                     <div class="col-sm-4">
                         <input name="IdMensajero" type="text" id="idM" type="text" class="form-control">
