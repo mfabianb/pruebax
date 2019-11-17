@@ -38,7 +38,7 @@
             var request;
             var error;
             var urlParams = new URLSearchParams(window.location.search);
-            var modp = new RegExp('[e][=][0-9]+');
+            var modp = new RegExp('[p][=][0-9]+');
             var fechaTerminoMinimo;
 
             window.addEventListener("load", iniciar, false);
@@ -46,10 +46,10 @@
 
             function iniciar() {
                 if (modp.test(urlParams)) {
-                    error = urlParams.get("e");
+                    error = urlParams.get("p");
                     if (error == '1') {
-                        $('#mError1').modal('show');
-                    } else if (error == '2') {
+                        $('#mAceptado1').modal('show');
+                    } else if (error == '2' || error == '3') {
                         $('#mError2').modal('show');
                     }
                 }
@@ -105,7 +105,7 @@
                 el administrador.
             </p><br>
 
-            <form class="form-horizontal" action="/Pruebax/registrarNuevoAsunto">
+            <form class="form-horizontal" action="/Pruebax/registrarNuevoAsunto" method="POST">
                 <h4><b>Datos del asunto</b></h4>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Nombre:</label>
@@ -150,6 +150,42 @@
                 </div><br>
             </form>
         </section>
+        <div id="mError2" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Favor de verificar los datos</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-dismissable alert-danger">
+                            <strong>Alguno de los datos registrados</strong> no tienen el formato requerido, favor de verificarlo.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a type="button" class="btn btn-danger" data-dismiss="modal">Si, voy a verificar.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mAceptado1" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">Asunto registrado exitosamente.</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="alert alert-dismissable alert-success">
+                            <strong>Asunto registrado exitosamente, ya puede Turnarlo</strong>  o alguna otra acción.
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <a type="button" class="btn btn-success" data-dismiss="modal">Si, gracias.</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 
 </html>

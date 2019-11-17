@@ -138,7 +138,7 @@ public class ValidarFormato {
 
     public static boolean validarCrearNuevoAsunto(String datos[]) {
         boolean vdatos[] = new boolean[3];
-        vdatos[0] = esAlfaEspacio(datos[0]);
+        vdatos[0] = esAlfanumericoEspacio(datos[0]);
         vdatos[1] = esFecha(datos[1]);
         vdatos[2] = esNumerico(datos[2]);
         return datosValidos(vdatos);
