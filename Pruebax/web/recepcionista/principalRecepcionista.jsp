@@ -45,13 +45,9 @@
                     <a href="#" class="dropdown-toggle" style="text-decoration: none;" data-toggle="dropdown" ID="registro"
                        runat="server">| <%=nombre%> <span class="caret"></span> | </a>
                     <ul class="dropdown-menu">
-<<<<<<< HEAD
                         <li><a href="/Pruebax/CerrarSesion">Cerrar Sesión</a></li>
                         <li><a href="">Contactar supervisor</a></li>
                         <li><a href="">CasoUsoN</a></li>
-=======
-                        <li><a href="/Pruebax/CerrarSesion"><b>Cerrar Sesión</b></a></li>
->>>>>>> 6aefae5ced3618cd09910a7f2d68bcee4bfa14ce
                     </ul>
                 </div>
             </div>
@@ -61,12 +57,9 @@
     <div class="container" id="Menu">
         <ul class="nav nav-pills pull-right">
             <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
-<<<<<<< HEAD
             <li><a href="#"><b>Visualizar Mensajeros</b></a></li>
             <li><a href="#"><b>Asuntos</b></a></li>
             <li><a href="#"><b>Registro de usuarios</b></a></li>
-=======
->>>>>>> 6aefae5ced3618cd09910a7f2d68bcee4bfa14ce
         </ul>
     </div>
     <hr style="height: 2pt; margin-top: 0pt;" /><br><br>
