@@ -86,7 +86,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nombre</td>
+                            <td><label name="nomAsunto">Nombre</label></td>
                             <td><a title="Descripción" href="#"><img src="/Pruebax/img/Doc.png" width="40" /></a></td>
                             <td><input name="turno" type="image" src="/Pruebax/img/Turnar.png" width="40px" title="Asignar empleados">
                             </td>
