@@ -1,11 +1,10 @@
-package org.proyectox.sesion;
-
 /*
- *      Autor: mfab
- *  Documento: IniciarSesion
- *  Creado el: Mar 26, 2019, 9:25:44 PM
- *   Proyecto: Mueve tus Manos
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package org.proyectox.controlador.consultar;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -14,15 +13,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.proyectox.entidades.Usuario;
-import org.proyectox.modelo.consultar.ConsultarUsuario;
-import org.proyectox.validar.ValidarFormato;
 
 /**
  *
  * @author mfab
  */
-
-public class IniciarSesion extends HttpServlet {
+public class buscarMensajero extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -36,33 +32,19 @@ public class IniciarSesion extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            String usuarioLogin;
-            String contrasenaLogin;
-            Usuario usuario = null;
+        request.setCharacterEncoding("UTF-8");
+        try {
+            PrintWriter out = response.getWriter();
             HttpSession sesion = request.getSession(true);
+            Usuario usuario;
 
             if (sesion.getAttribute("Usuario") != null) {
-                response.sendRedirect("/Pruebax/index.jsp");
+                usuario = (Usuario) sesion.getAttribute("Usuario");
+                usuario.getTipoUsuario();
             } else {
-
-                usuarioLogin = request.getParameter("usuario");
-                contrasenaLogin = request.getParameter("password");
-
-                if (!ValidarFormato.validarLogin(new String[]{usuarioLogin, contrasenaLogin})) {
-                    response.sendRedirect("/Pruebax/index.jsp?e=1");
-                } else {
-                    usuario = ConsultarUsuario.consultarUnUsuario(usuarioLogin, contrasenaLogin);
-                    if (usuario != null) {
-                        sesion.setAttribute("Usuario", usuario);
-                        response.sendRedirect("/Pruebax/index.jsp?a=1");
-                    } else {
-                        response.sendRedirect("/Pruebax/index.jsp?e=2");
-                    }
-                }
+                response.sendRedirect("/Pruebax/CerrarSesion");
             }
-        } catch (Exception e) {
-            response.sendRedirect("/Pruebax/index.jsp?e=2");
+        } catch (IOException e) {
         }
     }
 
@@ -78,7 +60,7 @@ public class IniciarSesion extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.sendRedirect("/Pruebax/");
+        processRequest(request, response);
     }
 
     /**

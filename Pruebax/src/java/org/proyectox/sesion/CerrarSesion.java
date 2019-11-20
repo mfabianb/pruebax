@@ -21,7 +21,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author mfab
  */
-@WebServlet(name = "CerrarSesion", urlPatterns = {"/CerrarSesion"})
+
 public class CerrarSesion extends HttpServlet {
 
     /**

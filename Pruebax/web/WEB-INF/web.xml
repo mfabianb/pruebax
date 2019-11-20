@@ -8,13 +8,45 @@
         <servlet-name>registrarNuevoAsunto</servlet-name>
         <servlet-class>org.proyectox.controlador.insertar.registrarNuevoAsunto</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>registrarMensajero</servlet-name>
-        <url-pattern>/registrarMensajero</url-pattern>
-    </servlet-mapping>
+    <servlet>
+        <servlet-name>buscarAsunto</servlet-name>
+        <servlet-class>org.proyectox.controlador.consultar.buscarAsunto</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>IniciarSesion</servlet-name>
+        <servlet-class>org.proyectox.sesion.IniciarSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CerrarSesion</servlet-name>
+        <servlet-class>org.proyectox.sesion.CerrarSesion</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>buscarMensajero</servlet-name>
+        <servlet-class>org.proyectox.controlador.consultar.buscarMensajero</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>registrarNuevoAsunto</servlet-name>
-        <url-pattern>/registrarNuevoAsunto</url-pattern>
+        <url-pattern>/JefeA/registrarNuevoAsunto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buscarAsunto</servlet-name>
+        <url-pattern>/JefeA/buscarAsunto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>IniciarSesion</servlet-name>
+        <url-pattern>/IniciarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CerrarSesion</servlet-name>
+        <url-pattern>/CerrarSesion</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>buscarMensajero</servlet-name>
+        <url-pattern>/recepcionista/buscarMensajero</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registrarMensajero</servlet-name>
+        <url-pattern>/recepcionista/registrarMensajero</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
