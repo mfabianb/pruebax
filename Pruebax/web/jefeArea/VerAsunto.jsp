@@ -237,6 +237,7 @@
                 <button name="DescDoc" type="button" class="btn btn-default">Descripción</button>
                 <button name="Suspender" type="button" class="btn btn-default">Suspender</button>
                 <button name="Cancelar" type="button" class="btn btn-default">Cancelar</button>
+                <button name="Fin" type="button" class="btn btn-default">Finalizar</button>
             </div>
         </Form>
     </section><br><br><br><br>
