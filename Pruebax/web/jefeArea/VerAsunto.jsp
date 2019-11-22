@@ -185,7 +185,7 @@
         <Form action="" method="">
             <div class="col-md-6 table-responsive">
                 <h2>Responsable</h2>
-                <span></span>
+                <span></span><br><br><br>
 
                 <h2>Turnos</h2>
                 <table class="table table-condensed col-md-3">
@@ -201,7 +201,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table>
+                </table><br><br><br>
 
                 <h2>Documentos</h2>
                 <table class="table table-condensed col-md-3">

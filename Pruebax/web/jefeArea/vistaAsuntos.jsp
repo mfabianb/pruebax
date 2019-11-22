@@ -207,12 +207,12 @@
                                            title="Asignar empleados">
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeArea/anexarDocumentos.jsp" title="Archivar documento">
+                                    <a href="/Pruebax/jefeArea/anexarDocumento.jsp" title="Archivar documento">
                                         <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeArea/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/jefeArea/VerAsunto.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
                                 </td>
