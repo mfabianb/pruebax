@@ -222,12 +222,14 @@
                                 <span>Motivo1</span>
                             </td>
                             <td>
-                                <input name="visualizarD" type="image" src="imagenes/ojo.png" width="20px"
-                                    title="Abrir" />
+                                <a href="" name="visualizarD" title="Abrir">
+                                    <img src="/Pruebax/img/mas1.png" width="20px"/>
+                                </a>
                             </td>
                             <td>
-                                <input name="obcervacionD" type="image" src="imagenes/ojo.png" width="20px"
-                                    title="Obsevaciones" />
+                                <a href="" name="obcervacionD" title="Abrir">
+                                    <img  src="/Pruebax/img/ojo.png" width="20px"/>
+                                </a>
                             </td>
                         </tr>
                     </tbody>

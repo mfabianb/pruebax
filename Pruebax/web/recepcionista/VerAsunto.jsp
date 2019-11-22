@@ -30,7 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        var request;
+        /*var request;
         var idCuerpoTabla;
         var tabla;
         var filas;
@@ -42,14 +42,14 @@
 
             sendVerAsunto();
 
-            /*var btnBsr = document.getElementById('btnBsr');
+            var btnBsr = document.getElementById('btnBsr');
              btnBsr.addEventListener("click", sendInfo, false);
              
              var btnEli = document.getElementById('btnEli');
              btnEli.addEventListener("click", sendInfoEliminar, false);
              
              var btnRsp = document.getElementById('btnRsp');
-             btnRsp.addEventListener("click", sendInfoResponder, false);*/
+             btnRsp.addEventListener("click", sendInfoResponder, false);
         }
 
         function sendVisualizarTodosAsunto() {
@@ -222,12 +222,14 @@
                                 <span>Motivo1</span>
                             </td>
                             <td>
-                                <input name="visualizarD" type="image" src="imagenes/ojo.png" width="20px"
-                                    title="Abrir" />
+                                <a href="" name="visualizarD" title="Abrir">
+                                    <img src="/Pruebax/img/mas1.png" width="20px"/>
+                                </a>
                             </td>
                             <td>
-                                <input name="obcervacionD" type="image" src="imagenes/ojo.png" width="20px"
-                                    title="Obsevaciones" />
+                                <a href="" name="obcervacionD" title="Abrir">
+                                    <img  src="/Pruebax/img/ojo.png" width="20px"/>
+                                </a>
                             </td>
                         </tr>
                     </tbody>
