@@ -33,7 +33,7 @@
     </head>
 
     <body>
-        <jsp:include page='menuJefeD.jsp'/>
+        <jsp:include page='MenuJefeD.jsp'/>
 
         <section class="container" id="Cuerpo">
             
