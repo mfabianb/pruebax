@@ -70,7 +70,7 @@
         <jsp:include page='menuJefeA.jsp'/>
 
         <section class="container" id="Cuerpo">
-            
+            <br><br>
             <h2><b>Nuevo Asunto</b></h2>
             <p>
                 Por favor, para crear un asunto nuevo llena el siguiente formulario con atención.
@@ -80,7 +80,7 @@
             </p><br>
 
             <form class="form-horizontal" action="/Pruebax/JefeA/registrarNuevoAsunto" method="POST">
-                <h4><b>Datos del asunto</b></h4>
+                <h4><b>Datos del asunto</b></h4><br>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="name">Nombre:</label>
                     <div class="col-sm-4">
@@ -109,13 +109,13 @@
 
                 <br>
 
-                <h4><b>Descripción del asunto</b></h4>
+                <h4><b>Descripción del asunto</b></h4><br>
                 <div class="form-group">
                     <div id="div_file" class="btn btn-default col-sm-offset-2">
                         <label class="center" for="btn_enviar">Subir Documento</label>
                         <input type="file" name="DescAsunto" id="btn_enviar">
                     </div>
-                </div><br>
+                </div><br><br>
 
                 <div class="form-group">
                     <div class="col-sm-10">

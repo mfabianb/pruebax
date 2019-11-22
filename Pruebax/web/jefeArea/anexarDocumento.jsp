@@ -67,7 +67,7 @@
                     </div>
                 </div><br>
 
-                <h4><b>Observaciones</b></h4>
+                <h4><b>Observaciones</b></h4><br>
                 <div class="form-group">
                     <div id="div_file" class="btn btn-default col-sm-offset-2">
                         <label class="center" for="btn_enviar">Subir Documento</label>
@@ -75,13 +75,13 @@
                     </div>
                 </div><br>
 
-                <h4><b>Documento</b></h4>
+                <h4><b>Documento</b></h4><br><br>
                 <div class="form-group">
                     <div id="div_file" class="btn btn-default col-sm-offset-2">
                         <label class="center" for="btn_enviar">Subir Documento</label>
                         <input type="file" name="DocSubir" id="btn_enviar">
                     </div>
-                </div><br>
+                </div><br><br>
 
                 <div class="form-group">
                     <div class="col-sm-10">
