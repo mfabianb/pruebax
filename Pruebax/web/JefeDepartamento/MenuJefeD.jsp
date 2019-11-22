@@ -34,6 +34,7 @@
             <a href="#" class="dropdown-toggle" style="text-decoration: none;" data-toggle="dropdown" ID="registro"
                runat="server">| <%=nombre%> <span class="caret"></span> | </a>
             <ul class="dropdown-menu">
+                <li><a href="/Pruebax/JefeDepartamento/principalJefeD.jsp">Página Principal</a></li>
                 <li><a href="/Pruebax/CerrarSesion">Cerrar Sesión</a></li>
             </ul>
         </div>
