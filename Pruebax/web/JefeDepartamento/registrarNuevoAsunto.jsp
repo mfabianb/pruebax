@@ -1,14 +1,14 @@
 <%-- 
-    Document   : registrarMensajero
-    Created on : Nov 15, 2019, 10:35:52 AM
+    Document   : registrarNuevoAsunto
+    Created on : Nov 16, 2019, 5:43:21 PM
     Author     : mfab
 --%>
 
 <%@page import="org.proyectox.entidades.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-
 <html lang="es" dir="ltr">
+
     <%
         String nombre = "";
         String tipoUsuario = "";
@@ -16,7 +16,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("Recepcionista")) {
+                if (!tipoUsuario.equals("JefeD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -39,91 +39,103 @@
             var error;
             var urlParams = new URLSearchParams(window.location.search);
             var modp = new RegExp('[p][=][0-9]+');
+            var fechaTerminoMinimo;
 
             window.addEventListener("load", iniciar, false);
+            window.addEventListener("load", fechaTermino, false);
 
             function iniciar() {
                 if (modp.test(urlParams)) {
-                    mensaje = urlParams.get("p");
-                    if (mensaje == '1') {
-                        $('#mError1').modal('show');
-                    }
-                    if (mensaje == '2') {
+                    error = urlParams.get("p");
+                    if (error == '1') {
                         $('#mAceptado1').modal('show');
+                    } else if (error == '2' || error == '3') {
+                        $('#mError2').modal('show');
                     }
                 }
             }
-        </script>
 
+            function fechaTermino() {
+                var hoy = new Date();
+                fechaTerminoMinimo = hoy.getFullYear() + '-' + ('0' + (hoy.getMonth() + 1)).slice(-2) + '-' + ('0' + hoy
+                        .getDate()).slice(-2);
+                document.getElementById('fechaTerminoEstimada').min = fechaTerminoMinimo;
+                document.getElementById('fechaTerminoEstimada').value = fechaTerminoMinimo;
+            }
+        </script>
     </head>
 
     <body>
-
-        <jsp:include page='menuRecepcionista.jsp'/>
+        
+        <jsp:include page='menuJefeD.jsp'/>
 
         <section class="container" id="Cuerpo">
+            
+            <h2><b>Nuevo Asunto</b></h2>
+            <p>
+                Por favor, para crear un asunto nuevo llena el siguiente formulario con atención.
+                Tenga a la mano todos los documentos necesarios para el registro exitoso del asunto.
+                <br>Gracias por su comprensión para cualquier corrección o aclaración comuníquese con
+                el administrador.
+            </p><br>
 
-            <h2><b>Registro de mensajero</b></h2><br>
-            <form class="form-horizontal" action="/Pruebax/recepcionista/registrarMensajero" method="post">
-                <h4><b>Información general</b></h4>
+            <form class="form-horizontal" action="/Pruebax/JefeA/registrarNuevoAsunto" method="POST">
+                <h4><b>Datos del asunto</b></h4>
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="nomMensajero">Nombre:</label>
+                    <label class="control-label col-sm-2" for="name">Nombre:</label>
                     <div class="col-sm-4">
-                        <input name="Mensajero" type="name" class="form-control" id="nomMensajero">
+                        <input name="nombreAsunto" type="name" class="form-control" id="name"
+                               placeholder="Ingresar nombre del asunto">
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="procedencia">Procedencia:</label>
+                    <label for="tipo" class="control-label col-sm-2">Tipo:</label>
                     <div class="col-sm-4">
-                        <input name="Procedencia" type="text" class="form-control" id="procedencia">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="control-label col-sm-2" for="destino">Destino:</label>
-                    <div class="col-sm-4">
-                        <input name="Destino" type="text" id="destino" type="text" class="form-control">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="tipo" class="control-label col-sm-2">Tipo de identificación:</label>
-                    <div class="col-sm-4">
-                        <select class="form-control" id="tipoId" name="TipoIdMensajero">
-                            <option>INE</option>
-                            <option>ORGANIZACIÓN</option>
-                            <option>OTRA</option>
+                        <select class="form-control" id="tipo" name="TipoAsunto">
+                            <option value="1">Interno</option>
+                            <option value="2">Externo</option>
                         </select>
                     </div>
-                </div><br>
+                </div>
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="idM">Identificación</label>
+                    <label class="control-label col-sm-2" for="name">Fecha de estimación de término: </label>
                     <div class="col-sm-4">
-                        <input name="IdMensajero" type="text" id="idM" type="text" class="form-control">
-                    </div>
-                </div><br>
-                <div class="form-group">
-                    <div class="col-sm-10">
-                        <button type="submit" name="RegistroMen" class="btn btn-default">Registrar</button>
+                        <input name="fechaTerminoEstimadaAsunto" type="date" min="" max="2022-12-31" class="form-control"
+                               id="fechaTerminoEstimada" placeholder="Ingresar nombre del asunto">
                     </div>
                 </div>
-            </form>
-        </section><br><br><br><br>
 
-        <div id="mError1" class="modal fade" role="dialog">
+                <br>
+
+                <h4><b>Descripción del asunto</b></h4>
+                <div class="form-group">
+                    <div id="div_file" class="btn btn-default col-sm-offset-2">
+                        <label class="center" for="btn_enviar">Subir Documento</label>
+                        <input type="file" name="DescAsunto" id="btn_enviar">
+                    </div>
+                </div><br>
+
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <button type="submit" name="CrearAsunto" class="btn btn-default">Crear</button>
+                    </div>
+                </div><br>
+            </form>
+        </section> <br><br><br><br>
+
+        <div id="mError2" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Favor de verificar sus datos</h4>
+                        <h4 class="modal-title">Favor de verificar los datos</h4>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-dismissable alert-danger">
-                            <strong>Algún dato es incorrecto</strong> no tienen el formato requerido, favor de
-                            verificarlo.<br>
-                            No se aceptan carácteres especiales ni campos en blanco.
+                            <strong>Alguno de los datos registrados</strong> no tienen el formato requerido, favor de
+                            verificarlo.
                         </div>
                     </div>
                     <div class="modal-footer">
@@ -132,27 +144,24 @@
                 </div>
             </div>
         </div>
-
         <div id="mAceptado1" class="modal fade" role="dialog">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                        <h4 class="modal-title">Registro exitoso</h4>
+                        <h4 class="modal-title">Asunto registrado exitosamente.</h4>
                     </div>
                     <div class="modal-body">
                         <div class="alert alert-dismissable alert-success">
-                            <strong>Registro exitoso.</strong> puede pasar el área que va a visitar.
-                            <strong>RECUERDE REGISTRAR SU SALIDA AQUÍ MISMO.</strong>
+                            <strong>Asunto registrado exitosamente, ya puede Turnarlo</strong> o alguna otra acción.
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <a type="button" class="btn btn-success" data-dismiss="modal">Si, voy.</a>
+                        <a type="button" class="btn btn-success" data-dismiss="modal">Si, gracias.</a>
                     </div>
                 </div>
             </div>
         </div>
-
     </body>
 
 </html>

@@ -12,7 +12,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
+                if (!tipoUsuario.equals("JefeD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -174,7 +174,7 @@
 
     <body>
 
-        <jsp:include page='menuJefeA.jsp'/>
+        <jsp:include page='menuJefeD.jsp'/>
 
         <section class="container" id="Cuerpo">
 
@@ -207,15 +207,13 @@
                                            title="Asignar empleados">
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeArea/anexarDocumentos.jsp" title="Archivar documento">
+                                    <a href="/Pruebax/JefeDepartamento/anexarDocumento.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
                                     </a>
                                 </td>
-                                <td>
-                                    <a href="/Pruebax/JefeArea/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/JefeDepartamento/VerAsunto.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
-                                </td>
                             </tr>
                         </tbody>
                     </table><br>

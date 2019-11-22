@@ -1,8 +1,3 @@
-<%-- 
-    Document   : principalRecepcionista
-    Created on : Nov 15, 2019, 10:45:39 AM
-    Author     : mfab
---%>
 
 <%@page import="org.proyectox.entidades.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +11,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("Recepcionista")) {
+                if (!tipoUsuario.equals("JefeD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -37,14 +32,14 @@
     </head>
 
     <body>
-
-        <jsp:include page='menuRecepcionista.jsp'/>
+        
+        <jsp:include page='menuJefeD.jsp'/>
 
         <section class="container" id="Cuerpo">
+            
+            <h1>Bienvenido <%=nombre%>, usted es <%=tipoUsuario%></h1>
+        </section>
 
-            <h1>Bienvenido <%=nombre%></h1>
-        </section><br><br><br><br>
-
-    </body>
+    </body><br><br><br><br>
 
 </html>

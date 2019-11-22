@@ -5,22 +5,22 @@
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
 
-    <%
-        String nombre = "";
-        String tipoUsuario = "";
-        try {
-            if (session.getAttribute("Usuario") != null) {
-                tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
-                nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
-                    response.sendRedirect("/Pruebax/CerrarSesion");
-                }
-            } else {
+<%
+    String nombre = "";
+    String tipoUsuario = "";
+    try {
+        if (session.getAttribute("Usuario") != null) {
+            tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
+            nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
+            if (!tipoUsuario.equals("Recepcionista")) {
                 response.sendRedirect("/Pruebax/CerrarSesion");
             }
-        } catch (Exception e) {
+        } else {
+            response.sendRedirect("/Pruebax/CerrarSesion");
         }
-    %>
+    } catch (Exception e) {
+    }
+%>
 
     <header>
         <meta charset="utf-8">
@@ -174,7 +174,7 @@
 
     <body>
 
-        <jsp:include page='menuJefeA.jsp'/>
+        <jsp:include page='menuRecepcionista.jsp'/>
 
         <section class="container" id="Cuerpo">
 
@@ -191,7 +191,6 @@
                         <thead style="background-color:#6897c7; color: #252525;">
                             <tr>
                                 <th class="col-md-3 text-center">Nombre</th>
-                                <th class="col-md-1 text-center">Turnar</th>
                                 <th class="col-md-1 text-center">Documentos</th>
                                 <th class="col-md-1 text-center"></th>
                             </tr>
@@ -203,16 +202,12 @@
 
                                 </td>
                                 <td>
-                                    <input name="turno" type="image" src="/Pruebax/img/Turnar.png" width="40px"
-                                           title="Asignar empleados">
-                                </td>
-                                <td>
-                                    <a href="/Pruebax/JefeArea/anexarDocumentos.jsp" title="Archivar documento">
-                                        <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
+                                    <a href="/Pruebax/recepcionista/anexarDocumento.jsp" title="Archivar documento">
+                                        <img src="/Pruebax/img/mas1.png" width="40px"alt="Archivar documento" />
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeArea/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/recepcionista/VerAsunto.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
                                 </td>

@@ -1,8 +1,3 @@
-<%-- 
-    Document   : anexarDocumento
-    Created on : Nov 16, 2019, 6:07:10 PM
-    Author     : mfab
---%>
 
 <%@page import="org.proyectox.entidades.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +11,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
+                if (!tipoUsuario.equals("Recepcionista")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -37,7 +32,7 @@
     </head>
 
     <body>
-        <jsp:include page='menuJefeA.jsp'/>
+        <jsp:include page='menuRecepcionista.jsp'/>
 
         <section class="container" id="Cuerpo">
             

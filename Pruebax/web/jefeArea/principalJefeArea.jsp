@@ -45,6 +45,6 @@
             <h1>Bienvenido <%=nombre%>, usted es <%=tipoUsuario%></h1>
         </section>
 
-    </body>
+    </body><br><br><br><br>
 
 </html>

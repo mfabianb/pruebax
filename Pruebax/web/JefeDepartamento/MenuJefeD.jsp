@@ -1,8 +1,3 @@
-<%-- 
-    Document   : menuJefeA
-    Created on : Nov 20, 2019, 11:01:57 AM
-    Author     : mfab
---%>
 
 <%@page import="org.proyectox.entidades.Usuario"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -16,7 +11,7 @@
         if (session.getAttribute("Usuario") != null) {
             tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
             nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-            if (!tipoUsuario.equals("JefeA")) {
+            if (!tipoUsuario.equals("JefeD")) {
                 response.sendRedirect("/Pruebax/CerrarSesion");
             }
         } else {
@@ -48,8 +43,8 @@
 <hr style="height: 2pt; margin-top: 0pt;" />
 <div class="container" id="Menu">
     <ul class="nav nav-pills pull-right">
-        <li><a href="/Pruebax/jefeArea/registrarNuevoAsunto.jsp"><b>Crear Nuevo Asunto</b></a></li>
-        <li><a href="/Pruebax/jefeArea/vistaAsuntos.jsp"><b>Consultar Asuntos</b></a></li>
+        <li><a href="/Pruebax/jefeDepartamento/registrarNuevoAsunto.jsp"><b>Crear Nuevo Asunto</b></a></li>
+        <li><a href="/Pruebax/jefeDepartamento/vistaAsuntos.jsp"><b>Consultar Asuntos</b></a></li>
     </ul>
 </div>
 <hr style="height: 2pt; margin-top: 0pt;" />
