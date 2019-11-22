@@ -43,8 +43,8 @@
 <hr style="height: 2pt; margin-top: 0pt;" />
 <div class="container" id="Menu">
     <ul class="nav nav-pills pull-right">
-        <li><a href="/Pruebax/jefeDepartamento/registrarNuevoAsunto.jsp"><b>Crear Nuevo Asunto</b></a></li>
-        <li><a href="/Pruebax/jefeDepartamento/vistaAsuntos.jsp"><b>Consultar Asuntos</b></a></li>
+        <li><a href="/Pruebax/JefeDepartamento/registrarNuevoAsunto.jsp"><b>Crear Nuevo Asunto</b></a></li>
+        <li><a href="/Pruebax/JefeDepartamento/vistaAsuntos.jsp"><b>Consultar Asuntos</b></a></li>
     </ul>
 </div>
 <hr style="height: 2pt; margin-top: 0pt;" />
