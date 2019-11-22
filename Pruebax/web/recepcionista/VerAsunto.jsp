@@ -177,7 +177,7 @@
         <br><br>
         <h2><b>NOMBRE DEL ASUNTOS</b></h2><br>
         <div class="col-md-3 text-center"><br><br>
-            <img src="Imagenes/Doc.png" style="width:300pt;"><br>
+            <img src="/Pruebax/img/Doc.png" style="width:300pt;"><br>
         </div>
 
         <div id="espacio" class="col-md-3"></div>

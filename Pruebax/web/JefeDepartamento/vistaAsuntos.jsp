@@ -211,9 +211,11 @@
                                         <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
                                     </a>
                                 </td>
+                                <td>
                                     <a href="/Pruebax/JefeDepartamento/VerAsunto.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
+                                </td>
                             </tr>
                         </tbody>
                     </table><br>

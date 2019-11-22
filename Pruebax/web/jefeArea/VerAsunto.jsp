@@ -30,7 +30,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
-        var request;
+        /*var request;
         var idCuerpoTabla;
         var tabla;
         var filas;
@@ -42,14 +42,14 @@
 
             sendVerAsunto();
 
-            /*var btnBsr = document.getElementById('btnBsr');
+            var btnBsr = document.getElementById('btnBsr');
              btnBsr.addEventListener("click", sendInfo, false);
              
              var btnEli = document.getElementById('btnEli');
              btnEli.addEventListener("click", sendInfoEliminar, false);
              
              var btnRsp = document.getElementById('btnRsp');
-             btnRsp.addEventListener("click", sendInfoResponder, false);*/
+             btnRsp.addEventListener("click", sendInfoResponder, false);
         }
 
         function sendVisualizarTodosAsunto() {
@@ -177,7 +177,7 @@
         <br><br>
         <h2><b>NOMBRE DEL ASUNTOS</b></h2><br>
         <div class="col-md-3 text-center"><br><br>
-            <img src="Imagenes/Doc.png" style="width:300pt;"><br>
+            <img src="/Pruebax/img/Doc.png" style="width:300pt;"><br>
         </div>
 
         <div id="espacio" class="col-md-3"></div>
