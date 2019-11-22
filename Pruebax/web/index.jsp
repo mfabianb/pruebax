@@ -17,7 +17,7 @@
                 } else if (tipoUsuario.equals("JefeA")) {
                     response.sendRedirect("/Pruebax/jefeArea/principalJefeArea.jsp");
                 } else if (tipoUsuario.equals("JefeD")) {
-                    response.sendRedirect("/Pruebax/jefeDepartamento/principalJefeDepartamento.jsp");
+                    response.sendRedirect("/Pruebax/JefeDepartamento/principalJefeD.jsp");
                 } else if (tipoUsuario.equals("Supervisor")) {
                     response.sendRedirect("/Pruebax/supervisor/principalSupervisor.jsp");
                 } else if (tipoUsuario.equals("Admin")) {
