@@ -17,11 +17,120 @@ public class Sentencias {
                 + "values ('" + nombre + "','" + procedencia + "','" + identificacion + "','" + destino + "', CURRENT_TIMESTAMP, 'OTRA')";
     }
 
-    public static String insertarNuevoAsunto(String nombre, String fechaTermino, String tipo, int idCreador) {
-        return "INSERT INTO ASUNTO (idCreador, nombre, fechaInicio, horaInicio, fechaTermino, tipo, estado) VALUES "
-                + "(" + idCreador + ", '" + nombre + "', CURDATE(), CURTIME(), '" + fechaTermino + "', " + tipo + ", 1)";
+    public static String insertarNuevoAsunto(String nombre, String fechaTermino, String tipo, int idCreador, String archivo) {
+        return "INSERT INTO ASUNTO (idCreador, nombre, fechaInicio, horaInicio, fechaTermino, tipo, estado, descripcion) VALUES "
+                + "(" + idCreador + ", '" + nombre + "', CURDATE(), CURTIME(), '" + fechaTermino + "', " + tipo + ", 1, \""+archivo+"\")";
     }
-
+    
+    public static String insertarNuevoUsuario(int idUsuario, String nombre, String email, String password, int tipo){
+        return "INSERT INTO USUARIO (idUsuario, nombre, email, password, tipo) VALUES "
+                + "(" + idUsuario + ","+ nombre +","+email +","+password +","+ tipo+")";
+    }
+    
+    public static String insertarUsuarioDepto(int idUsuario, int idDepto){
+        return "INSERT INTO USUARIO_DEPTO(idUsuario,idDepto) VALUES ("
+                + idUsuario +", " +idDepto + ")";
+    }
+    
+    public static String insertarJefeDepto(int idJefe, int idDepto){
+        return "INSERT INTO JEFE_DEPTO(idJefe,idDepto) VALUES ("
+                + idJefe +", " +idDepto + ")";
+    }
+    public static String insertarJefeArea(int idJefe, int idArea){
+        return "INSERT INTO JEFE_AREA(idJefe,idArea) VALUES ("
+                + idJefe +", " +idArea + ")";
+    }
+    
+     public static String insertarTurnoRechazado(int idAsunto, int idUsuario, String fechaRechazo, String horaRechazo, String justificacion){
+        return "INSERT INTO turno_rechazado (idAsunto, idUsuario, fechaRechazo, horaRechazo, justificacion) VALUES ("
+                +idAsunto+","+idUsuario+","+fechaRechazo+","+horaRechazo+","+justificacion+")";
+    }
+     
+     public static String insertarTurnoAceptado(int idAsunto, int idUsuario, String fechaAceptacion, String horaAceptacion){
+        return "INSERT INTO turno_aceptado (idAsunto, idUsuario, fechaAceptacion, horaAceptacion) VALUES ("
+                +idAsunto+","+idUsuario+","+fechaAceptacion+","+horaAceptacion+")";
+    }
+     
+     public static String insertarActividad(int idActividad, int idAsunto, int idUsuario, String nombre, String fecha, String hora, String descripcion){
+         return "INSERT INTO actividad (idActividad, idAsunto, idUsuario, nombre, fecha, hora, descripcion) VALUES ("
+                 +idActividad+","+idAsunto+","+idUsuario+","+nombre+","+fecha+","+hora+","+descripcion+")";
+     }
+   
+     public static String insertarReporte(int idReporte, String nombre, String contenido, String fecha, String hora, int idAsunto, int idUsuario){
+         return "INSERT INTO reporte (idReporte, nombre, contenido, fecha, hora, idAsunto, idUsuario) VALUES ("
+                 +idReporte+","+nombre+","+contenido+","+fecha+","+hora+","+idAsunto+","+idUsuario+")";
+     }
+     
+     public static String insertarSolicitudInfo(String idSolicitud, String fecha, String hora, String titulo, String descripcion, int idAsunto, int idUsuario){
+         return "INSERT INTO solicitud_info (idSolicitud, fecha, hora, titulo, descripcion, idAsunto, idUsuario) VALUES ("
+                 +idSolicitud+","+fecha+","+hora+","+titulo+","+descripcion+","+idAsunto+","+idUsuario+")";
+     }
+     
+     public static String insertarRespuestaParcial(int idRespuesta, String idSolicitud, int idDestinatario){
+         return "INSERT INTO respuesta (idRespuesta, idSolicitud, idDestinatario) VALUES ("
+                 +idRespuesta+","+idSolicitud+","+idDestinatario +")";
+     }
+     
+     public static String insertarRespuestaPCompleta(int idRespuesta, String respuesta, String fechaRspuesta, String horaRespuesta){
+         return "UPDATE respuesta SET respuesta="+respuesta+", fechaRespuesta="+fechaRspuesta+",horaRespuesta="+horaRespuesta+" WHERE idRespuesta = "+idRespuesta;
+     }
+    
+    public static String getAsuntos(){
+        return "SELECT * FROM asunto";
+    }
+    
+    public static String getAsunto(int idAsunto){
+        return "SELECT * FROM asunto WHERE idasunto = "+idAsunto;
+    }
+    
+    public static String getUsuarios(){
+        return "SELECT * FROM usuario";
+    }
+    
+    public static String getUsuario(int idUsuario){
+        return "SELECT * FROM usuario WHERE idusuario = "+idUsuario;
+    }
+    
+    public static String getAreas(){
+        return "SELECT * FROM area";
+    }
+    
+    public static String getArea(int idArea){
+        return "SELECT * FROM area WHERE idArea = "+idArea;
+    }
+    
+    public static String getDeptos(){
+        return "SELECT * FROM departamento";
+    }
+    
+    public static String getDepto(int idDepto){
+        return "SELECT * FROM departamento WHERE iddepto = "+idDepto;
+    }
+    
+    public static String getAsuntosPendientes(int idUsuario){
+        return "SELECT a.* from asunto a,usuario u, turno t, turno_aceptado ta WHERE u.idUsuario=t.idUsuario and ta.idUsuario = t.idUsuario and t.idAsunto=a.idAsunto and u.idUsuario="+idUsuario;
+    }
+    
+    public static String getAsuntosJefe(int idJefe){
+        return "SELECT * FROM asunto WHERE idCreador = "+idJefe;
+    }
+    
+    public static String getEmpleados(){
+        return "SELECT * FROM usuario";
+    }
+    
+    public static String getTurnos(int idAsunto){
+        return "SELECT usuario.nombre FROM turno,usuario WHERE turno.idUsuario = usuario.idUsuario and idAsunto="+idAsunto;
+    }
+    
+    public static String insertarTurno(int idAsunto, int idUsuario){
+        return "INSERT INTO turno (idAsunto,idUsuario,fechaPeticion,horaPeticion,indicaciones) VALUES ("
+                +idAsunto+","+idUsuario+",date(now()),time(now()),\"Se te ha asignado un asunto\")";
+    }
+    
+    
+     
+     
     /*
     public static String getUsuario(int id) {
         return "select idUsuario, Correo, Usuario, Password, Edad, Tipo, idEstado from Usuario where idUsuario='" + id + "'";

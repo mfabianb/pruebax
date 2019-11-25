@@ -29,6 +29,26 @@
         <link rel="stylesheet" type="text/css" href="/Pruebax/css/estilo.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            var request;
+            var error;
+            var urlParams = new URLSearchParams(window.location.search);
+            var modp = new RegExp('[p][=][0-9]+');
+
+            window.addEventListener("load", iniciar, false);
+
+            function iniciar() {
+                if (modp.test(urlParams)) {
+                    mensaje = urlParams.get("p");
+                    if (mensaje == '1') {
+                        $('#mError1').modal('show');
+                    }
+                    if (mensaje == '2') {
+                        $('#mAceptado1').modal('show');
+                    }
+                }
+            }
+        </script>
     </head>
 
     <body>
@@ -38,7 +58,7 @@
         <section class="container" id="Cuerpo">
 
             <h2><b>Registro de usuario</b></h2><br>
-            <form name="Formulario1" class="form-horizontal" action="/Pruebax/recepcionista/registrarMensajero" method="post">
+            <form name="Formulario1" class="form-horizontal" action="/Pruebax/Administrador/registrarUsuario" method="post">
                 <h4><b>Información general</b></h4>
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="id">Id Usuario:</label>

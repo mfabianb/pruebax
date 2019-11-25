@@ -13,23 +13,20 @@ import org.proyectox.modelo.Sentencias;
 
 /**
  *
- * @author mfab
+ * @author julio
  */
-public class insertarNuevoAsunto {
-
-    public static boolean insertarAsunto(String nombre, String fechaTermino, String tipo, int idCreador, String archivo) {
+public class insertarTurno {
+    public static void insertarTurno(int idAsunto, int idUsuario) {
         Connection cn;
         Statement st;
         try {
             cn = Conexion.getConexion();
             st = cn.createStatement();
-            st.executeUpdate(Sentencias.insertarNuevoAsunto(nombre, fechaTermino, tipo, idCreador, archivo));
+            st.executeUpdate(Sentencias.insertarTurno(idAsunto,idUsuario));
             st.close();
             cn.close();
-            return true;
         } catch (SQLException e) {
             e.printStackTrace();
-            return false;
         }
     }
 }

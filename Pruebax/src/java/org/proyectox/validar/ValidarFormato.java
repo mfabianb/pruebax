@@ -111,7 +111,7 @@ public class ValidarFormato {
 
     public static boolean datosValidos(boolean datos[]) {
         boolean validos = true;
-        for (int i = 0; i < datos.length; i++) {
+        for (int i = 0; i < datos.length; i++){
             if (!datos[i]) {
                 validos = false;
                 break;

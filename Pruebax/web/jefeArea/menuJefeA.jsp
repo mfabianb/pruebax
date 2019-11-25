@@ -16,7 +16,7 @@
         if (session.getAttribute("Usuario") != null) {
             tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
             nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-            if (!tipoUsuario.equals("JefeA")) {
+            if (!tipoUsuario.equals("JefeAoD")) {
                 response.sendRedirect("/Pruebax/CerrarSesion");
             }
         } else {

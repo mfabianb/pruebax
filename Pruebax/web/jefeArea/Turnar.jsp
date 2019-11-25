@@ -1,5 +1,6 @@
 
 <%@page import="org.proyectox.entidades.Usuario"%>
+<%@page import="org.proyectox.modelo.consultar.ConsultarEmpleados"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -12,7 +13,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
+                if (!tipoUsuario.equals("JefeAoD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -40,42 +41,49 @@
 
             <h2><b>Usuarios</b></h2>
             <p>
-                Pila todos los jefes de area:
             </p>
 
             <div class="col-md-3"></div>
 
             <div class="container col-md-6" id="Tabla">
-                <form action="" method="POST"><br><br>
+                <form action="/Pruebax/jefeArea/turnar" value="<%=Integer.parseInt(request.getParameter("p").trim())%>">
+                    
+                    
+                    <input type="hidden" id="asunto" name="asunto" value="<%=Integer.parseInt(request.getParameter("p").trim())%>">
                     
                     <table class="table table-bordered table-hover text-center">
                         <thead style="background-color:#6897c7; color: #252525;">
                             <tr>
                                 <th class="col-md-3 text-center">Nombre</th>
-                                <th class="col-md-1 text-center">Ver</th>
                                 <th class="col-md-1 text-center">Elegir</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyVistaAsunto">
+                            <% String[][] empleados = ConsultarEmpleados.consultarEmpleados();
+                            
+                                for(int i = 0; i < empleados.length ; i++){
+                                    
+                                
+                                %>
                             <tr>
                                 <td>
-                                    <label name="nomAsunto">Nombre</label>
+                                    <label name="nomAsunto">
+                                        <%=empleados[i][1]
+                                                %>
+                                    </label>
 
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/jefeArea/VerEmpleado.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
-                                    </a>
-                                </td>
-                                <td>
                                     <div class="checkbox">
-                                        <label><input type="checkbox" value=""></label>
+                                        <label><input type="checkbox" name="turnos" value="<%=empleados[i][0]%>"></label>
                                     </div>
                                 </td>
                             </tr>
+                            <% }
+                                %>
                         </tbody>
                     </table><br>
-                    <button name="Turno" type="button" class="btn btn-default">Turnar</button>
+                    <button name="Turno" type="submit" class="btn btn-default">Turnar</button>
                 </form>
             </div>
         </section><br><br><br><br>

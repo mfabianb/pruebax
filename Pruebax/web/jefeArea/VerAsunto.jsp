@@ -1,4 +1,6 @@
+<%@page import="org.proyectox.modelo.consultar.ConsultarTurnos"%>
 <%@page import="org.proyectox.entidades.Usuario"%>
+<%@page import="org.proyectox.modelo.consultar.ConsultarAsunto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -11,7 +13,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
+                if (!tipoUsuario.equals("JefeAoD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -30,6 +32,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
+            
+  
         /*var request;
         var idCuerpoTabla;
         var tabla;
@@ -175,7 +179,13 @@
 
     <section class="container" id="Cuerpo">
         <br><br>
-        <h2><b>NOMBRE DEL ASUNTOS</b></h2><br>
+        <% int asunto = Integer.parseInt(request.getParameter("p").trim());
+            String[] asuntoo = ConsultarAsunto.consultarAsunto(asunto);
+            %>
+            <h2><b>
+                    <%=asuntoo[1]
+                            %>
+                </b></h2><br>
         <div class="col-md-3 text-center"><br><br>
             <img src="/Pruebax/img/Doc.png" style="width:300pt;"><br>
         </div>
@@ -184,7 +194,10 @@
 
         <Form action="" method="">
             <div class="col-md-6 table-responsive">
-                <h2>Responsable</h2>
+                <h2>
+                    <%=((Usuario) session.getAttribute("Usuario")).getNombre()
+                    %>
+                </h2>
                 <span></span><br><br><br>
 
                 <h2>Turnos</h2>
@@ -195,16 +208,22 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <% String[] turnos = ConsultarTurnos.consultarturnos(asunto);
+                        for(int i = 0 ;  i < turnos.length ; i++){
+                            
+                        %>
                         <tr>
                             <td>
-                                <span>Integrante 1</span>
+                                <span><%=turnos[i]%></span>
                             </td>
                         </tr>
+                        <%}%>
                     </tbody>
                 </table><br><br><br>
 
-                <h2>Documentos</h2>
-                <table class="table table-condensed col-md-3">
+                <h2>Descripción</h2>
+                <p><%=asuntoo[12]%></p>
+                <!--<table class="table table-condensed col-md-3">
                     <thead>
                         <tr>
                             <th>Nombre</th>
@@ -233,7 +252,7 @@
                             </td>
                         </tr>
                     </tbody>
-                </table><br><br><br><br><br><br>
+                </table>--><br><br><br><br><br><br>
                 <button name="DescDoc" type="button" class="btn btn-default">Descripción</button>
                 <button name="Suspender" type="button" class="btn btn-default">Suspender</button>
                 <button name="Cancelar" type="button" class="btn btn-default">Cancelar</button>

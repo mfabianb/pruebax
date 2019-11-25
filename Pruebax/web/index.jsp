@@ -14,9 +14,9 @@
                 String tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 if (tipoUsuario.equals("Recepcionista")) {
                     response.sendRedirect("/Pruebax/recepcionista/principalRecepcionista.jsp");
-                } else if (tipoUsuario.equals("JefeA")) {
+                } else if (tipoUsuario.equals("JefeAoD")) {
                     response.sendRedirect("/Pruebax/jefeArea/principalJefeArea.jsp");
-                } else if (tipoUsuario.equals("JefeD")) {
+                } else if (tipoUsuario.equals("JefeAoD")) {
                     response.sendRedirect("/Pruebax/JefeDepartamento/principalJefeD.jsp");
                 } else if (tipoUsuario.equals("Admin")) {
                     response.sendRedirect("/Pruebax/Administrador/principalAdmin.jsp");

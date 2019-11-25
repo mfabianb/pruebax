@@ -24,6 +24,6 @@
 <div class="form-group">
     <label class="control-label col-sm-2" for="Area">ID del departamento:</label>
     <div class="col-sm-4">
-        <input name="idDepto" type="text" id="Area" type="text" class="form-control">
+        <input name="idDepto" type="text" id="Area" type="text" class="form-control" value="">
     </div>
 </div><br>

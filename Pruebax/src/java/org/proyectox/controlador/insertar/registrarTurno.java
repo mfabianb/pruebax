@@ -8,19 +8,23 @@ package org.proyectox.controlador.insertar;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import org.proyectox.entidades.Usuario;
-import org.proyectox.modelo.insertar.insertarNuevoAsunto;
-import org.proyectox.validar.ValidarFormato;
+import org.proyectox.modelo.insertar.insertarJefeArea;
+import org.proyectox.modelo.insertar.insertarJefeDepto;
+import org.proyectox.modelo.insertar.insertarTurno;
+import org.proyectox.modelo.insertar.insertarUsuario;
+import org.proyectox.modelo.insertar.insertarUsuarioDepto;
 
 /**
  *
- * @author mfab
+ * @author julio
  */
-public class registrarNuevoAsunto extends HttpServlet {
+public class registrarTurno extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,36 +37,38 @@ public class registrarNuevoAsunto extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");  /// LÍNEAS MUY IMPORTANTES PARA LEER UTF-8
-        request.setCharacterEncoding("UTF-8");               /// LÍNEAS MUY IMPORTANTES PARA LEER UTF-8
-        try {
-            PrintWriter out = response.getWriter();
-            HttpSession sesion = request.getSession(true);
-            Usuario usuario = (Usuario) sesion.getAttribute("Usuario");
-
-            if (usuario.getTipoUsuario().equals("JefeAoD")) {
-                String nombre;
-                String fechaTermino;
-                String tipo;
-                String descripcion;
-                nombre = request.getParameter("nombreAsunto");
-                fechaTermino = request.getParameter("fechaTerminoEstimadaAsunto");
-                tipo = request.getParameter("TipoAsunto");
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            try {
                 
-                descripcion = request.getParameter("DescAsunto");
+                HttpSession sesion = request.getSession(true);
+                Usuario usuario = (Usuario) sesion.getAttribute("Usuario");
                 
-                if(ValidarFormato.validarCrearNuevoAsunto(new String[]{nombre, fechaTermino, tipo})){
-                    if(insertarNuevoAsunto.insertarAsunto(nombre, fechaTermino, tipo, usuario.getIdUsuario(), descripcion)){
-                        response.sendRedirect("/Pruebax/jefeArea/registrarNuevoAsunto.jsp?p=1");
-                    }else{
-                        response.sendRedirect("/Pruebax/jefeArea/registrarNuevoAsunto.jsp?p=2");
+                
+                if (usuario != null) {
+                    //Hay sesión
+                    String[] turnos = request.getParameterValues("turnos");
+                    String asunto = request.getParameter("asunto");
+                    for(String value : turnos){
+                        insertarTurno.insertarTurno(Integer.parseInt(asunto.trim()), Integer.parseInt(value.trim()));
                     }
-                }else{
-                    response.sendRedirect("/Pruebax/jefeArea/registrarNuevoAsunto.jsp?p=3");
+                    response.sendRedirect("/Pruebax/jefeArea/Turnar.jsp?p=1");
+                    //if (ValidarFormato.validarRegistroMensajeros(new String[]{nombre, procedencia, destino, identificacion})) {
+                        
+                    //} else {
+                    //    response.sendRedirect("/Pruebax/Administrador/registrarUsuario.jsp?p=3");
+                    //}
+                    /*out.println("<h3>Nombre: " + nombre + "</h3>");
+                    out.println("<h3>Procedencia: " + procedencia + "</h3>");
+                    out.println("<h3>Destino: " + destino + "</h3>");
+                    out.println("<h3>Identificación: " + identificacion + "</h3>");*/
+                } else {
                 }
-                
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                response.sendRedirect("/Pruebax/CerrarSesion");
             }
-        } catch (Exception e) {
         }
     }
 

@@ -1,5 +1,8 @@
 
+<%@page import="java.sql.ResultSet"%>
 <%@page import="org.proyectox.entidades.Usuario"%>
+<%@page import="org.proyectox.modelo.consultar.ConsultarAsuntosJefe"%>
+<%@page import="java.sql.Array"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -12,7 +15,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
+                if (!tipoUsuario.equals("JefeAoD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -197,27 +200,41 @@
                             </tr>
                         </thead>
                         <tbody id="tBodyVistaAsunto">
-                            <tr>
-                                <td>
-                                    <label name="nomAsunto">Nombre</label>
-
-                                </td>
-                                <td>
-                                    <a href="/Pruebax/jefeArea/Turnar.jsp" title="Archivar documento">
-                                        <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Archivar documento" />
-                                    </a>
-                                </td>
-                                <td>
+                            <%
+                                String[][] asuntos = ConsultarAsuntosJefe.consultarAsuntosJefe(((Usuario) session.getAttribute("Usuario")).getIdUsuario());
+                                
+                                for(int i = 0 ; i< asuntos.length ; i++) {
+                                 %>
+                                    <tr>
+                                        <td>
+                                            <label name="nomAsunto">
+                                                <%=asuntos[i][1]
+                                                %></label>
+                                        </td>
+                                        <td>
+                                            <a href="/Pruebax/jefeArea/Turnar.jsp?p=<%=asuntos[i][0]%>" title="Archivar documento">
+                                                <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Archivar documento" />
+                                            </a>
+                                        </td>
+                                    
+                                    <td>
                                     <a href="/Pruebax/jefeArea/anexarDocumento.jsp" title="Archivar documento">
                                         <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/jefeArea/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/jefeArea/VerAsunto.jsp?p=<%=asuntos[i][0]%>" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
                                 </td>
-                            </tr>
+                                </tr>
+                                <%}
+                            %>
+                            
+                                
+                                
+                                
+                            
                         </tbody>
                     </table><br>
                 </form>

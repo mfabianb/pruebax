@@ -21,8 +21,8 @@ public class Conexion {
             String port = "3306";
             String dbname = "Asuntos_GUM";
             String user = "root";
-            String pass = "123";
-            String url = "jdbc:mysql://" + server + ":" + port + "/" + dbname + "";
+            String pass = "root";
+            String url = "jdbc:mysql://" + server + ":" + port + "/" + dbname + "?characterEncoding=latin1";
             return DriverManager.getConnection(url, user, pass);
         } catch (SQLException | ClassNotFoundException ex) {
             ex.printStackTrace();

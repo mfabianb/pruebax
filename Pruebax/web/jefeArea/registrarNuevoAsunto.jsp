@@ -16,7 +16,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeA")) {
+                if (!tipoUsuario.equals("JefeAoD")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -111,10 +111,8 @@
 
                 <h4><b>Descripción del asunto</b></h4><br>
                 <div class="form-group">
-                    <div id="div_file" class="btn btn-default col-sm-offset-2">
-                        <label class="center" for="btn_enviar">Subir Documento</label>
-                        <input type="file" name="DescAsunto" id="btn_enviar">
-                    </div>
+                    <input name="DescAsunto" type="name" class="form-control" id="DescAsunto"
+                               placeholder="Descripcion">
                 </div><br><br>
 
                 <div class="form-group">

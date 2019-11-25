@@ -5,6 +5,10 @@
         <servlet-class>org.proyectox.controlador.insertar.registrarMensajero</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>registrarUsuario</servlet-name>
+        <servlet-class>org.proyectox.controlador.insertar.registrarUsuario</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>registrarNuevoAsunto</servlet-name>
         <servlet-class>org.proyectox.controlador.insertar.registrarNuevoAsunto</servlet-class>
     </servlet>
@@ -24,13 +28,23 @@
         <servlet-name>buscarMensajero</servlet-name>
         <servlet-class>org.proyectox.controlador.consultar.buscarMensajero</servlet-class>
     </servlet>
+    
+    <servlet>
+        <servlet-name>registrarTurno</servlet-name>
+        <servlet-class>org.proyectox.controlador.insertar.registrarTurno</servlet-class>
+    </servlet>
+    
     <servlet-mapping>
         <servlet-name>registrarNuevoAsunto</servlet-name>
-        <url-pattern>/JefeA/registrarNuevoAsunto</url-pattern>
+        <url-pattern>/jefeArea/registrarNuevoAsunto</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>buscarAsunto</servlet-name>
         <url-pattern>/JefeA/buscarAsunto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registrarTurno</servlet-name>
+        <url-pattern>/jefeArea/turnar</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>IniciarSesion</servlet-name>
@@ -48,6 +62,12 @@
         <servlet-name>registrarMensajero</servlet-name>
         <url-pattern>/recepcionista/registrarMensajero</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registrarUsuario</servlet-name>
+        <url-pattern>/Administrador/registrarUsuario</url-pattern>
+    </servlet-mapping>
+    
+    
     <session-config>
         <session-timeout>
             30
