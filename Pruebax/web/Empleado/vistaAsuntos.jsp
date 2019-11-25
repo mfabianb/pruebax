@@ -12,7 +12,7 @@
         if (session.getAttribute("Usuario") != null) {
             tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
             nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-            if (!tipoUsuario.equals("Recepcionista")) {
+            if (!tipoUsuario.equals("Empleado")) {
                 response.sendRedirect("/Pruebax/CerrarSesion");
             }
         } else {
@@ -174,7 +174,7 @@
 
     <body>
 
-        <jsp:include page='menuRecepcionista.jsp'/>
+        <jsp:include page='menuEmpleado.jsp'/>
 
         <section class="container" id="Cuerpo">
 
@@ -202,12 +202,12 @@
 
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/recepcionista/anexarDocumento.jsp" title="Archivar documento">
+                                    <a href="/Pruebax/Empleado/anexarDocumento.jsp" title="Archivar documento">
                                         <img src="/Pruebax/img/mas1.png" width="40px"alt="Archivar documento" />
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/recepcionista/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/Empleado/VerAsunto.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
                                 </td>

@@ -84,7 +84,7 @@
                 </div><br><br>
 
                 <div class="form-group">
-                    <div class="col-sm-10">
+                    <div class="col-sm-offset-5">
                         <button name="Doc" type="submit" class="btn btn-default">Subir documento</button>
                     </div>
                 </div>

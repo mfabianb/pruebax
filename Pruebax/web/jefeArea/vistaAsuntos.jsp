@@ -203,8 +203,9 @@
 
                                 </td>
                                 <td>
-                                    <input name="turno" type="image" src="/Pruebax/img/Turnar.png" width="40px"
-                                           title="Asignar empleados">
+                                    <a href="/Pruebax/jefeArea/Turnar.jsp" title="Archivar documento">
+                                        <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Archivar documento" />
+                                    </a>
                                 </td>
                                 <td>
                                     <a href="/Pruebax/jefeArea/anexarDocumento.jsp" title="Archivar documento">

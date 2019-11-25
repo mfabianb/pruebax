@@ -12,7 +12,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeD")) {
+                if (!tipoUsuario.equals("Admin")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -34,46 +34,54 @@
 
     <body>
 
-        <jsp:include page='MenuJefeD.jsp'/>
+        <jsp:include page='menuAdmin.jsp'/>
 
         <section class="container" id="Cuerpo">
 
-            <h2><b>ASUNTOS</b></h2>
+            <h2><b>Usuarios</b></h2>
             <p>
-                Pila de asuntos en los que esta invlolucrado:
+                Pila todos los usuarios de la empresa en los que esta invlolucrado:
             </p>
 
             <div class="col-md-3"></div>
 
             <div class="container col-md-6" id="Tabla">
                 <form action="" method="POST">
+                    <div class="form-group">
+                        <label for="tipoUsuario" name="tipoUsuario" class="control-label col-sm-4">Tipo de usuario:</label>
+                        <div class="col-sm-4">
+                            <select class="form-control" id="tipoUsuario" name="tipo" onchange="Mostrar()">
+                                <option value="Todos">Todos</option>
+                                <option value="Recepcionista">Recepcionista</option>
+                                <option value="Empleado">Empleado</option>
+                                <option value="JefeD">Jefe de departamento</option>
+                                <option value="JefeA">Jefe de area</option>
+                            </select>
+                        </div>
+                    </div><br><br><br><br>
+                    
                     <table class="table table-bordered table-hover text-center">
                         <thead style="background-color:#6897c7; color: #252525;">
                             <tr>
                                 <th class="col-md-3 text-center">Nombre</th>
-                                <th class="col-md-1 text-center">Turnar</th>
-                                <th class="col-md-1 text-center">Documentos</th>
-                                <th class="col-md-1 text-center"></th>
+                                <th class="col-md-1 text-center">Modificar</th>
+                                <th class="col-md-1 text-center">Ver</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyVistaAsunto">
                             <tr>
                                 <td>
                                     <label name="nomAsunto">Nombre</label>
+
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeDepartamento/Turnar.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Archivar documento" />
+                                    <a href="/Pruebax/Administrador/registrarUsuario.jsp" title="Modificar">
+                                        <img  src="/Pruebax/img/modificar.png" width="30px" alt="Modificar" />
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeDepartamento/anexarDocumento.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/Pruebax/JefeDepartamento/VerAsunto.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
+                                    <a href="/Pruebax/Administrador/VerUsuario.jsp" title="Abrir">
+                                        <img  src="/Pruebax/img/ojo.png" width="30px" alt="Abrir"  />
                                     </a>
                                 </td>
                             </tr>

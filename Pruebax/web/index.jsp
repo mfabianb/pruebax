@@ -18,12 +18,10 @@
                     response.sendRedirect("/Pruebax/jefeArea/principalJefeArea.jsp");
                 } else if (tipoUsuario.equals("JefeD")) {
                     response.sendRedirect("/Pruebax/JefeDepartamento/principalJefeD.jsp");
-                } else if (tipoUsuario.equals("Supervisor")) {
-                    response.sendRedirect("/Pruebax/supervisor/principalSupervisor.jsp");
                 } else if (tipoUsuario.equals("Admin")) {
-                    response.sendRedirect("/Pruebax/admin/principalAdmin.jsp");
+                    response.sendRedirect("/Pruebax/Administrador/principalAdmin.jsp");
                 } else if (tipoUsuario.equals("Empleado")) {
-                    response.sendRedirect("/Pruebax/empleado/principalEmpleado.jsp");
+                    response.sendRedirect("/Pruebax/Empleado/principalEmpleado.jsp");
                 }
             } else {
             }

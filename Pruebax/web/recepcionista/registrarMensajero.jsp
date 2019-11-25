@@ -105,7 +105,7 @@
                     </div>
                 </div><br>
                 <div class="form-group">
-                    <div class="col-sm-10">
+                    <div class="col-sm-offset-5">
                         <button type="submit" name="RegistroMen" class="btn btn-default">Registrar</button>
                     </div>
                 </div>

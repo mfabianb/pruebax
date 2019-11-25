@@ -11,7 +11,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("Recepcionista")) {
+                if (!tipoUsuario.equals("Empleado")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -171,7 +171,7 @@
 
 <body>
 
-    <jsp:include page='menuRecepcionista.jsp'/>
+    <jsp:include page='menuEmpleado.jsp'/>
 
     <section class="container" id="Cuerpo">
         <br><br>

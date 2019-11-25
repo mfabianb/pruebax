@@ -118,7 +118,7 @@
                 </div><br><br>
 
                 <div class="form-group">
-                    <div class="col-sm-10">
+                    <div class="col-sm-offset-6">
                         <button type="submit" name="CrearAsunto" class="btn btn-default">Crear</button>
                     </div>
                 </div><br>

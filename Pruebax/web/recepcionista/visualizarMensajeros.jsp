@@ -223,7 +223,8 @@
                                 <td><label name="Destino">Destino</label></td>
                                 <td><label name="TipoIdentificacion">Tipo</label></td>
                                 <td><label name="Identificación">Id</label></td>
-                                <td><button type="submit" name="Registrar Salida" class="btn btn-default">Registrar Salida
+                                <td>
+                                    <button type="submit" name="Registrar Salida" class="btn btn-default">Registrar Salida</button>
                                 </td>
                             </tr>
                         </tbody>

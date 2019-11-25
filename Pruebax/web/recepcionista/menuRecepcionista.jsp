@@ -49,7 +49,6 @@
     <ul class="nav nav-pills pull-right">
         <li><a href="/Pruebax/recepcionista/registrarMensajero.jsp"><b>Registrar Mensajero</b></a></li>
         <li><a href="/Pruebax/recepcionista/visualizarMensajeros.jsp"><b>Visualizar Mensajeros</b></a></li>
-        <li><a href="/Pruebax/recepcionista/vistaAsuntos.jsp"><b>Consultar Asuntos</b></a></li>
     </ul>
 </div>
 <hr style="height: 2pt; margin-top: 0pt;" />

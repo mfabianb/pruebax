@@ -38,47 +38,43 @@
 
         <section class="container" id="Cuerpo">
 
-            <h2><b>ASUNTOS</b></h2>
+            <h2><b>Usuarios</b></h2>
             <p>
-                Pila de asuntos en los que esta invlolucrado:
+                Pila todos los empleados de su departamento:
             </p>
 
             <div class="col-md-3"></div>
 
             <div class="container col-md-6" id="Tabla">
-                <form action="" method="POST">
+                <form action="" method="POST"><br><br>
                     <table class="table table-bordered table-hover text-center">
                         <thead style="background-color:#6897c7; color: #252525;">
                             <tr>
                                 <th class="col-md-3 text-center">Nombre</th>
-                                <th class="col-md-1 text-center">Turnar</th>
-                                <th class="col-md-1 text-center">Documentos</th>
-                                <th class="col-md-1 text-center"></th>
+                                <th class="col-md-1 text-center">Ver</th>
+                                <th class="col-md-1 text-center">Elegir</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyVistaAsunto">
                             <tr>
                                 <td>
                                     <label name="nomAsunto">Nombre</label>
+
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeDepartamento/Turnar.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Archivar documento" />
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/Pruebax/JefeDepartamento/anexarDocumento.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/Pruebax/JefeDepartamento/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/JefeDepartamento/VerEmpleado.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
+                                </td>
+                                <td>
+                                    <div class="checkbox">
+                                        <label><input type="checkbox" value=""></label>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table><br>
+                    <button name="Turno" type="button" class="btn btn-default">Turnar</button>
                 </form>
             </div>
         </section><br><br><br><br>

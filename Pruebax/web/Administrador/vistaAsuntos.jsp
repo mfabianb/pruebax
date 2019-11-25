@@ -12,7 +12,7 @@
             if (session.getAttribute("Usuario") != null) {
                 tipoUsuario = ((Usuario) session.getAttribute("Usuario")).getTipoUsuario();
                 nombre = ((Usuario) session.getAttribute("Usuario")).getNombre();
-                if (!tipoUsuario.equals("JefeD")) {
+                if (!tipoUsuario.equals("Admin")) {
                     response.sendRedirect("/Pruebax/CerrarSesion");
                 }
             } else {
@@ -34,7 +34,7 @@
 
     <body>
 
-        <jsp:include page='MenuJefeD.jsp'/>
+        <jsp:include page='menuAdmin.jsp'/>
 
         <section class="container" id="Cuerpo">
 
@@ -52,8 +52,7 @@
                             <tr>
                                 <th class="col-md-3 text-center">Nombre</th>
                                 <th class="col-md-1 text-center">Turnar</th>
-                                <th class="col-md-1 text-center">Documentos</th>
-                                <th class="col-md-1 text-center"></th>
+                                <th class="col-md-1 text-center">Ver</th>
                             </tr>
                         </thead>
                         <tbody id="tBodyVistaAsunto">
@@ -62,17 +61,12 @@
                                     <label name="nomAsunto">Nombre</label>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeDepartamento/Turnar.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Archivar documento" />
+                                    <a href="/Pruebax/Administrador/Turnar.jsp" title="Abrir">
+                                        <img  src="/Pruebax/img/Turnar.png" width="40px" alt="Abrir"  />
                                     </a>
                                 </td>
                                 <td>
-                                    <a href="/Pruebax/JefeDepartamento/anexarDocumento.jsp" title="Abrir">
-                                        <img  src="/Pruebax/img/mas1.png" width="40px" alt="Archivar documento" />
-                                    </a>
-                                </td>
-                                <td>
-                                    <a href="/Pruebax/JefeDepartamento/VerAsunto.jsp" title="Abrir">
+                                    <a href="/Pruebax/Administrador/VerAsunto.jsp" title="Abrir">
                                         <img  src="/Pruebax/img/ojo.png" width="40px" alt="Abrir"  />
                                     </a>
                                 </td>
